@@ -1,0 +1,17 @@
+# Full-size masters stay on your computer only
+originals/
+
+# Design/source files
+*.psd
+*.tif
+*.tiff
+*.raw
+*.cr2
+*.nef
+*.procreate
+*.kra
+
+# System junk
+.DS_Store
+Thumbs.db
+desktop.ini

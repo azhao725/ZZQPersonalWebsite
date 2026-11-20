@@ -1,0 +1,10 @@
+{
+  "name": "Your Name",
+  "tagline": "Painter & printmaker based in ...",
+  "email": "hello@example.com",
+  "location": "City, Country",
+  "social": {
+    "instagram": "https://instagram.com/yourhandle",
+    "website": ""
+  }
+}

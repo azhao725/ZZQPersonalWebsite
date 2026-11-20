@@ -1,0 +1,36 @@
+[
+  {
+    "slug": "2025-tidal-memory",
+    "title": "Tidal Memory",
+    "year": 2025,
+    "medium": "Oil on linen",
+    "dimensions": "120 × 90 cm",
+    "series": "coastlines",
+    "description": "EXAMPLE — replace with your own text. A few sentences about the piece.",
+    "tags": [
+      "painting",
+      "landscape"
+    ],
+    "featured": true,
+    "status": "available",
+    "image": "works/2025-tidal-memory/main.svg",
+    "details": [
+      "works/2025-tidal-memory/detail-1.svg"
+    ]
+  },
+  {
+    "slug": "2024-red-hours",
+    "title": "Red Hours",
+    "year": 2024,
+    "medium": "Gouache on paper",
+    "dimensions": "30 × 40 cm",
+    "series": "studies",
+    "description": "EXAMPLE — replace with your own text.",
+    "tags": [
+      "work on paper"
+    ],
+    "status": "sold",
+    "image": "works/2024-red-hours/main.svg",
+    "details": []
+  }
+]
