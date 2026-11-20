@@ -35,6 +35,10 @@ originals/              ← full-size masters; NOT uploaded (git-ignored)
    | `cover`   | optional file name of the cover image (default: first image) |
    | `exclude` | optional list of file names in the folder to leave off the page |
    | `hidden`  | `true` hides the whole project |
+   | `titleLocal` | optional title in another language, shown big on the project page (e.g. `"阳阳"`) |
+   | `descriptionZh` / `description` | optional Chinese / English text under the title; `\n` = new line |
+   | `headerImage` | optional file name of an illustration shown to the right of the description |
+   | `layout`  | `"fullwidth"` = images fill the page width with no gaps (manga, comics) |
 
 3. Run `python3 tools/build_index.py` — it checks everything and rebuilds `content/data.js`.
    (Or ask Claude to run it.)
