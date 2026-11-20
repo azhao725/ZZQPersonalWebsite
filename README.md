@@ -38,7 +38,9 @@ originals/              ← full-size masters; NOT uploaded (git-ignored)
    | `titleLocal` | optional title in another language, shown big on the project page (e.g. `"阳阳"`) |
    | `descriptionZh` / `description` | optional Chinese / English text under the title; `\n` = new line |
    | `headerImage` | optional file name of an illustration shown to the right of the description |
-   | `layout`  | `"fullwidth"` = images fill the page width with no gaps (manga, comics) |
+   | `layout`  | `"fullwidth"` = images fill the page width with no gaps (manga, comics); `"grid"` = rows of 2–4 pieces that fill a box, click to enlarge |
+   | `titleBoth` | `true` = show the English title and `titleLocal` on two lines |
+   | `sequence` | optional list of file names in the order to show them (others go at the end) |
 
 3. Run `python3 tools/build_index.py` — it checks everything and rebuilds `content/data.js`.
    (Or ask Claude to run it.)

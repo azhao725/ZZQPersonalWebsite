@@ -7,7 +7,9 @@ or any of its images/videos.
 """
 import json
 import re
+import shutil
 import struct
+import subprocess
 import sys
 import time
 from pathlib import Path
@@ -56,6 +58,20 @@ def image_size(path: Path):
     except (OSError, struct.error):
         pass
     return None
+
+
+def video_size(path: Path):
+    """(width, height) of a video if ffprobe is installed; otherwise None (the page adapts)."""
+    if not shutil.which("ffprobe"):
+        return None
+    try:
+        out = subprocess.run(["ffprobe", "-v", "error", "-select_streams", "v:0",
+                              "-show_entries", "stream=width,height", "-of", "csv=p=0", str(path)],
+                             capture_output=True, text=True, timeout=20).stdout.strip()
+        w, h = out.split(",")[:2]
+        return int(w), int(h)
+    except (ValueError, subprocess.SubprocessError, OSError):
+        return None
 
 
 def stamp_pages(version: str):
@@ -115,9 +131,18 @@ def build_project(folder: Path):
         else:
             continue
         item = {"type": kind, "src": p.relative_to(CONTENT).as_posix()}
-        if kind == "image" and (dims := image_size(p)):
+        dims = image_size(p) if kind == "image" else video_size(p)
+        if dims:
             item["w"], item["h"] = dims
         media.append(item)
+
+    sequence = info.get("sequence") or []
+    if sequence:
+        rank = {name: k for k, name in enumerate(sequence)}
+        media.sort(key=lambda m: rank.get(m["src"].rsplit("/", 1)[-1], len(rank)))
+        missing = [n for n in sequence if not (folder / n).exists()]
+        for n in missing:
+            warnings.append(f"{where}: \"{n}\" is in sequence but not in the folder")
 
     cover = info.get("cover")
     if cover:
@@ -125,7 +150,7 @@ def build_project(folder: Path):
     else:
         cover = next((m["src"] for m in media if m["type"] == "image"), None)
 
-    project = {k: v for k, v in info.items() if k not in {"exclude", "hidden", "cover"}}
+    project = {k: v for k, v in info.items() if k not in {"exclude", "hidden", "cover", "sequence"}}
     project.update({
         "slug": info.get("slug") or slugify(folder.name),
         "folder": folder.name,

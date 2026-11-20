@@ -37,7 +37,9 @@ window.SITE_DATA = {
         },
         {
           "type": "video",
-          "src": "works/InfantTower/Fly.mp4"
+          "src": "works/InfantTower/Fly.mp4",
+          "w": 824,
+          "h": 786
         },
         {
           "type": "image",
@@ -64,11 +66,15 @@ window.SITE_DATA = {
       "media": [
         {
           "type": "video",
-          "src": "works/Corridor/demo1.mp4"
+          "src": "works/Corridor/demo1.mp4",
+          "w": 1920,
+          "h": 1440
         },
         {
           "type": "video",
-          "src": "works/Corridor/home-video.mp4"
+          "src": "works/Corridor/home-video.mp4",
+          "w": 1920,
+          "h": 1080
         },
         {
           "type": "image",
@@ -78,7 +84,9 @@ window.SITE_DATA = {
         },
         {
           "type": "video",
-          "src": "works/Corridor/setup-demo.mp4"
+          "src": "works/Corridor/setup-demo.mp4",
+          "w": 1920,
+          "h": 1080
         },
         {
           "type": "image",
@@ -147,35 +155,50 @@ window.SITE_DATA = {
       "media": []
     },
     {
-      "title": "Paintings*Illus",
+      "title": "Paintings&Illus",
+      "titleLocal": "画和其他",
+      "titleBoth": true,
       "order": 6,
+      "layout": "grid",
       "slug": "paintings",
       "folder": "Paintings",
-      "cover": "works/Paintings/20Portraits.JPG",
+      "cover": "works/Paintings/fxn 2025-04-14 203454.273.jpg",
       "media": [
         {
           "type": "image",
-          "src": "works/Paintings/20Portraits.JPG",
-          "w": 4033,
-          "h": 3024
-        },
-        {
-          "type": "image",
-          "src": "works/Paintings/fxn 2025-04-14 203247.295.jpg",
-          "w": 4031,
-          "h": 3024
-        },
-        {
-          "type": "image",
           "src": "works/Paintings/fxn 2025-04-14 203454.273.jpg",
-          "w": 4031,
-          "h": 3024
+          "w": 2400,
+          "h": 1800
         },
         {
           "type": "image",
-          "src": "works/Paintings/fxn 2025-04-14 203538.610.jpg",
-          "w": 3887,
-          "h": 2599
+          "src": "works/Paintings/DeathOfRobot.jpg",
+          "w": 2400,
+          "h": 1040
+        },
+        {
+          "type": "image",
+          "src": "works/Paintings/IMG_3227.jpg",
+          "w": 2052,
+          "h": 2400
+        },
+        {
+          "type": "image",
+          "src": "works/Paintings/IMG_3226.jpg",
+          "w": 1800,
+          "h": 2400
+        },
+        {
+          "type": "image",
+          "src": "works/Paintings/IMG_1985.jpg",
+          "w": 2400,
+          "h": 1800
+        },
+        {
+          "type": "image",
+          "src": "works/Paintings/Embrace.jpg",
+          "w": 1393,
+          "h": 2400
         },
         {
           "type": "image",
@@ -188,6 +211,138 @@ window.SITE_DATA = {
           "src": "works/Paintings/WechatIMG167.jpg",
           "w": 1179,
           "h": 1512
+        },
+        {
+          "type": "image",
+          "src": "works/Paintings/Screenshot 2026-11-20 at 17.26.36-1.jpg",
+          "w": 1060,
+          "h": 705
+        },
+        {
+          "type": "image",
+          "src": "works/Paintings/fxn 2025-04-14 203247.295.jpg",
+          "w": 2400,
+          "h": 1800
+        },
+        {
+          "type": "image",
+          "src": "works/Paintings/AnimalProject.jpg",
+          "w": 2400,
+          "h": 1495
+        },
+        {
+          "type": "image",
+          "src": "works/Paintings/Church.jpg",
+          "w": 1800,
+          "h": 2400
+        },
+        {
+          "type": "image",
+          "src": "works/Paintings/IMG_6144.jpg",
+          "w": 2400,
+          "h": 1800
+        },
+        {
+          "type": "image",
+          "src": "works/Paintings/Screenshot 2026-11-20 at 17.28.04-1.jpg",
+          "w": 2100,
+          "h": 1424
+        },
+        {
+          "type": "image",
+          "src": "works/Paintings/Screenshot 2026-11-20 at 17.28.16-1.jpg",
+          "w": 2098,
+          "h": 1434
+        },
+        {
+          "type": "image",
+          "src": "works/Paintings/Screenshot 2026-11-20 at 17.28.31-1.jpg",
+          "w": 2016,
+          "h": 1428
+        },
+        {
+          "type": "image",
+          "src": "works/Paintings/Screenshot 2026-11-20 at 17.27.18-2.jpg",
+          "w": 598,
+          "h": 449
+        },
+        {
+          "type": "image",
+          "src": "works/Paintings/20Portraits.JPG",
+          "w": 2400,
+          "h": 1800
+        },
+        {
+          "type": "image",
+          "src": "works/Paintings/fxn 2025-04-14 203538.610.jpg",
+          "w": 2400,
+          "h": 1605
+        },
+        {
+          "type": "image",
+          "src": "works/Paintings/e476971b29c70f47e8cf4a8142a1c938.JPG",
+          "w": 1444,
+          "h": 2151
+        },
+        {
+          "type": "image",
+          "src": "works/Paintings/IMG_3225.jpg",
+          "w": 1800,
+          "h": 2400
+        },
+        {
+          "type": "image",
+          "src": "works/Paintings/Screenshot 2026-11-20 at 17.27.36-1.jpg",
+          "w": 832,
+          "h": 1116
+        },
+        {
+          "type": "image",
+          "src": "works/Paintings/Screenshot 2026-11-20 at 17.27.36-2.jpg",
+          "w": 829,
+          "h": 1116
+        },
+        {
+          "type": "image",
+          "src": "works/Paintings/Screenshot 2026-11-20 at 17.27.36-3.jpg",
+          "w": 846,
+          "h": 1116
+        },
+        {
+          "type": "image",
+          "src": "works/Paintings/Screenshot 2026-11-20 at 17.27.47-1.jpg",
+          "w": 1283,
+          "h": 958
+        },
+        {
+          "type": "image",
+          "src": "works/Paintings/Screenshot 2026-11-20 at 17.27.47-2.jpg",
+          "w": 1288,
+          "h": 958
+        },
+        {
+          "type": "image",
+          "src": "works/Paintings/Screenshot 2026-11-20 at 17.27.18-1.jpg",
+          "w": 1236,
+          "h": 908
+        },
+        {
+          "type": "video",
+          "src": "works/Paintings/Screen Recording 2026-01-15 at 01.44.10.mp4",
+          "w": 860,
+          "h": 620
+        },
+        {
+          "type": "image",
+          "src": "works/Paintings/IMG_8926.jpg",
+          "w": 2400,
+          "h": 1012
+        },
+        {
+          "type": "image",
+          "src": "works/Paintings/Screenshot 2026-11-20 at 17.27.18-3.jpg",
+          "w": 600,
+          "h": 454
         }
       ]
     }
