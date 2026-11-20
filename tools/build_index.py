@@ -74,6 +74,19 @@ def video_size(path: Path):
         return None
 
 
+def video_duration(path: Path):
+    """Length in whole seconds if ffprobe is installed; otherwise None."""
+    if not shutil.which("ffprobe"):
+        return None
+    try:
+        out = subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration",
+                              "-of", "csv=p=0", str(path)],
+                             capture_output=True, text=True, timeout=20).stdout.strip()
+        return round(float(out))
+    except (ValueError, subprocess.SubprocessError, OSError):
+        return None
+
+
 def stamp_pages(version: str):
     """Add ?v=<version> to local css/js links so browsers fetch fresh copies after updates."""
     for name in ("index.html", "project.html"):
@@ -110,6 +123,9 @@ def build_project(folder: Path):
         errors.append(f"{where}: \"year\" must be a number, e.g. 2025")
 
     exclude = set(info.get("exclude", []))
+    videos = {f.stem for f in folder.iterdir() if f.suffix.lower() in VIDEO_EXT}
+    posters = {v: f"{v}-poster.jpg" for v in videos if (folder / f"{v}-poster.jpg").exists()}
+    exclude |= set(posters.values())
     media = []
     for p in sorted(folder.iterdir(), key=natural_key):
         ext = p.suffix.lower()
@@ -134,6 +150,11 @@ def build_project(folder: Path):
         dims = image_size(p) if kind == "image" else video_size(p)
         if dims:
             item["w"], item["h"] = dims
+        if kind == "video":
+            if p.stem in posters:
+                item["poster"] = f"works/{folder.name}/{posters[p.stem]}"
+            if (secs := video_duration(p)):
+                item["d"] = secs
         media.append(item)
 
     sequence = info.get("sequence") or []

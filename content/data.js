@@ -39,7 +39,8 @@ window.SITE_DATA = {
           "type": "video",
           "src": "works/InfantTower/Fly.mp4",
           "w": 824,
-          "h": 786
+          "h": 786,
+          "d": 20
         },
         {
           "type": "image",
@@ -68,13 +69,15 @@ window.SITE_DATA = {
           "type": "video",
           "src": "works/Corridor/demo1.mp4",
           "w": 1920,
-          "h": 1440
+          "h": 1440,
+          "d": 18
         },
         {
           "type": "video",
           "src": "works/Corridor/home-video.mp4",
           "w": 1920,
-          "h": 1080
+          "h": 1080,
+          "d": 16
         },
         {
           "type": "image",
@@ -86,7 +89,8 @@ window.SITE_DATA = {
           "type": "video",
           "src": "works/Corridor/setup-demo.mp4",
           "w": 1920,
-          "h": 1080
+          "h": 1080,
+          "d": 26
         },
         {
           "type": "image",
@@ -101,20 +105,40 @@ window.SITE_DATA = {
       "year": 2026,
       "medium": "Experimental Unreal game",
       "order": 3,
+      "layout": "film",
       "slug": "chair",
       "folder": "Chair",
       "cover": null,
-      "media": []
+      "media": [
+        {
+          "type": "video",
+          "src": "works/Chair/Chair.mp4",
+          "w": 1920,
+          "h": 1044,
+          "poster": "works/Chair/Chair-poster.jpg",
+          "d": 80
+        }
+      ]
     },
     {
       "title": "Church",
       "year": 2026,
       "medium": "UE5 environment design",
       "order": 4,
+      "layout": "film",
       "slug": "church",
       "folder": "Church",
       "cover": null,
-      "media": []
+      "media": [
+        {
+          "type": "video",
+          "src": "works/Church/final-walkthrough.mp4",
+          "w": 1920,
+          "h": 1086,
+          "poster": "works/Church/final-walkthrough-poster.jpg",
+          "d": 75
+        }
+      ]
     },
     {
       "title": "Sunny",
@@ -340,7 +364,8 @@ window.SITE_DATA = {
           "type": "video",
           "src": "works/Paintings/Screen Recording 2026-01-15 at 01.44.10.mp4",
           "w": 860,
-          "h": 620
+          "h": 620,
+          "d": 23
         },
         {
           "type": "image",

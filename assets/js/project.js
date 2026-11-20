@@ -77,6 +77,8 @@
       Object.assign(el, { src: src(m.src), muted: true, loop: true, autoplay: true,
                           playsInline: true, preload: "metadata" });
       el.setAttribute("muted", "");
+    } else if (m.type === "video" && p.layout === "film") {
+      el = filmPlayer(m);
     } else if (m.type === "video") {
       el = document.createElement("video");
       Object.assign(el, { src: src(m.src), controls: true, playsInline: true, preload: "metadata" });
@@ -95,6 +97,39 @@
   });
 
   if (isGrid && p.media.length) justifiedGrid(media, p.media, els);
+
+  // ---------- film: big video, still frame + play button until clicked ----------
+  function filmPlayer(m) {
+    const fig = document.createElement("figure");
+    fig.className = "film";
+    if (m.w && m.h) fig.style.setProperty("--ar", m.w / m.h);
+
+    const v = document.createElement("video");
+    Object.assign(v, { src: src(m.src), playsInline: true, preload: m.poster ? "none" : "metadata" });
+    if (m.poster) v.poster = src(m.poster);
+
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "film__play";
+    const time = (s) => `${Math.floor(s / 60)}:${String(Math.round(s % 60)).padStart(2, "0")}`;
+    btn.innerHTML = `<span class="film__icon" aria-hidden="true"></span>
+      <span class="film__label">Play<small>${m.d ? time(m.d) + " · " : ""}Sound on</small></span>`;
+    btn.setAttribute("aria-label", "Play video with sound");
+    if (!m.d) v.addEventListener("loadedmetadata", () => {
+      btn.querySelector("small").textContent = time(v.duration) + " · Sound on";
+    }, { once: true });
+
+    btn.addEventListener("click", () => {
+      fig.classList.add("is-playing");
+      v.controls = true;
+      v.play().catch(() => {});
+      v.focus();
+    });
+    v.addEventListener("ended", () => { fig.classList.remove("is-playing"); v.controls = false; v.load(); });
+
+    fig.append(v, btn);
+    return fig;
+  }
 
   // ---------- grid: rows of 2–4 pieces that exactly fill the box width ----------
   function justifiedGrid(box, items, nodes) {
