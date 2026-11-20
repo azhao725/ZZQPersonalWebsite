@@ -1,10 +1,7 @@
 {
-  "name": "Your Name",
-  "tagline": "Painter & printmaker based in ...",
-  "email": "hello@example.com",
-  "location": "City, Country",
-  "social": {
-    "instagram": "https://instagram.com/yourhandle",
-    "website": ""
-  }
+  "name": "Ziqi Zhao",
+  "homeVideo": "works/Corridor/home-video.mp4",
+  "homePoster": "works/Corridor/home-poster.jpg",
+  "email": "",
+  "instagram": ""
 }

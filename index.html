@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ziqi Zhao — Portfolio</title>
+  <meta name="description" content="Portfolio of Ziqi Zhao — games, environmental experiences, manga, 3D and painting.">
+  <link rel="preload" href="assets/fonts/anton-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="home">
+  <video class="bg-video" id="bgVideo" autoplay muted loop playsinline preload="auto"></video>
+  <div class="bg-shade" aria-hidden="true"></div>
+  <nav class="stack" id="stack" aria-label="Projects">
+    <h1 class="stack__name" id="name">Ziqi Zhao</h1>
+    <div class="stack__divider"><span>Selected work</span><span id="count"></span></div>
+    <ol class="stack__list" id="list"></ol>
+  </nav>
+  <aside class="readout" aria-live="polite">
+    <p class="readout__label">Portfolio of<br><span id="readoutName">Ziqi Zhao</span></p>
+    <p class="readout__label readout__now" id="readout">Hover a project<br>&nbsp;</p>
+  </aside>
+  <script src="content/data.js"></script>
+  <script src="assets/js/home.js"></script>
+</body>
+</html>

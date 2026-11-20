@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-"""Scan content/works/ and write content/works.json for the website.
+"""Scan content/works/ and write content/data.js for the website.
 
 Usage:  python3 tools/build_index.py
-No extra installs needed. Run it after adding, editing or removing an artwork.
+No extra installs needed. Run it after adding, editing or removing a project
+or any of its images/videos.
 """
 import json
 import re
@@ -12,101 +13,114 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 CONTENT = ROOT / "content"
 WORKS_DIR = CONTENT / "works"
-OUT = CONTENT / "works.json"
+OUT = CONTENT / "data.js"
 
 IMAGE_EXT = {".jpg", ".jpeg", ".png", ".webp", ".gif", ".avif", ".svg"}
-SLUG_RE = re.compile(r"^[a-z0-9]+(-[a-z0-9]+)*$")
-MAX_BYTES = 2 * 1024 * 1024
-STATUSES = {"available", "sold", "private", "on-loan"}
+VIDEO_EXT = {".mp4", ".webm"}
+NOT_WEB = {".heic", ".heif", ".mov", ".tif", ".tiff", ".psd"}
+MAX_IMAGE = 3 * 1024 * 1024
+MAX_VIDEO = 50 * 1024 * 1024
+SKIP_NAMES = {"home-poster.jpg"}
 
 errors, warnings = [], []
 
 
-def detail_key(p: Path):
-    m = re.search(r"(\d+)", p.stem)
-    return (int(m.group(1)) if m else 10**9, p.name)
+def natural_key(p: Path):
+    return [int(t) if t.isdigit() else t.lower() for t in re.split(r"(\d+)", p.name)]
 
 
-def load_series_ids():
-    path = CONTENT / "series.json"
-    if not path.exists():
+def slugify(name: str) -> str:
+    return re.sub(r"[^a-z0-9]+", "-", name.lower()).strip("-")
+
+
+def build_project(folder: Path):
+    where = f"works/{folder.name}"
+    info_path = folder / "info.json"
+    if not info_path.exists():
+        errors.append(f"{where}: missing info.json")
         return None
     try:
-        return {s["id"] for s in json.loads(path.read_text(encoding="utf-8"))}
-    except (json.JSONDecodeError, KeyError, TypeError) as e:
-        errors.append(f"series.json: can't read it ({e})")
+        info = json.loads(info_path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as e:
+        errors.append(f"{where}/info.json: invalid JSON at line {e.lineno} ({e.msg})")
         return None
+    if info.get("hidden"):
+        return None
+    if not info.get("title"):
+        errors.append(f"{where}: info.json needs a \"title\"")
+    if "year" in info and not isinstance(info["year"], int):
+        errors.append(f"{where}: \"year\" must be a number, e.g. 2025")
 
-
-def build():
-    series_ids = load_series_ids()
-    works = []
-    for folder in sorted(p for p in WORKS_DIR.iterdir() if p.is_dir()):
-        slug = folder.name
-        where = f"works/{slug}"
-        if not SLUG_RE.match(slug):
-            warnings.append(f"{where}: folder name should be lowercase-with-hyphens")
-
-        info_path = folder / "info.json"
-        if not info_path.exists():
-            errors.append(f"{where}: missing info.json")
+    exclude = set(info.get("exclude", []))
+    media = []
+    for p in sorted(folder.iterdir(), key=natural_key):
+        ext = p.suffix.lower()
+        if not p.is_file() or p.name in exclude or p.name in SKIP_NAMES or p.name == "info.json":
             continue
-        try:
-            info = json.loads(info_path.read_text(encoding="utf-8"))
-        except json.JSONDecodeError as e:
-            errors.append(f"{where}/info.json: invalid JSON at line {e.lineno} ({e.msg})")
+        if ext in NOT_WEB:
+            warnings.append(f"{where}/{p.name}: {ext} doesn't display in most browsers — "
+                            "export as .jpg (images) or .mp4 (video). Skipped.")
             continue
-
-        if info.get("hidden"):
+        size = p.stat().st_size
+        if ext in IMAGE_EXT:
+            kind = "image"
+            if size > MAX_IMAGE:
+                warnings.append(f"{where}/{p.name}: {size/1e6:.1f} MB — aim for under 1–2 MB")
+        elif ext in VIDEO_EXT:
+            kind = "video"
+            if size > MAX_VIDEO:
+                warnings.append(f"{where}/{p.name}: {size/1e6:.0f} MB video — compress it")
+        else:
             continue
-        if not info.get("title"):
-            errors.append(f"{where}: info.json needs a \"title\"")
-        if not isinstance(info.get("year"), int):
-            errors.append(f"{where}: info.json needs a \"year\" as a number, e.g. 2025")
-        if series_ids is not None and info.get("series") and info["series"] not in series_ids:
-            warnings.append(f"{where}: series \"{info['series']}\" isn't listed in series.json")
-        if info.get("status") and info["status"] not in STATUSES:
-            warnings.append(f"{where}: status should be one of {sorted(STATUSES)}")
+        media.append({"type": kind, "src": p.relative_to(CONTENT).as_posix()})
 
-        images = [p for p in folder.iterdir() if p.suffix.lower() in IMAGE_EXT]
-        for p in images:
-            if " " in p.name or p.name != p.name.lower():
-                warnings.append(f"{where}/{p.name}: use lowercase names without spaces")
-            if p.stat().st_size > MAX_BYTES:
-                mb = p.stat().st_size / 1024 / 1024
-                warnings.append(f"{where}/{p.name}: {mb:.1f} MB — resize to ~2400px / under 1 MB")
-        main = [p for p in images if p.stem.lower() == "main"]
-        if not main:
-            errors.append(f"{where}: no main image (name it main.jpg)")
-            continue
-        if len(main) > 1:
-            warnings.append(f"{where}: more than one main image ({', '.join(p.name for p in main)}) — keep just one")
-        details = sorted((p for p in images if p not in main), key=detail_key)
+    cover = info.get("cover")
+    if cover:
+        cover = f"works/{folder.name}/{cover}"
+    else:
+        cover = next((m["src"] for m in media if m["type"] == "image"), None)
 
-        rel = lambda p: p.relative_to(CONTENT).as_posix()
-        works.append({
-            "slug": slug,
-            **{k: v for k, v in info.items() if k != "hidden"},
-            "image": rel(main[0]),
-            "details": [rel(p) for p in details],
-        })
-
-    works.sort(key=lambda w: (w.get("order", 10**9), -w.get("year", 0), w["slug"]))
-    return works
+    project = {k: v for k, v in info.items() if k not in {"exclude", "hidden", "cover"}}
+    project.update({
+        "slug": info.get("slug") or slugify(folder.name),
+        "folder": folder.name,
+        "cover": cover,
+        "media": media,
+    })
+    if not media:
+        warnings.append(f"{where}: no images/videos yet (page will say 'coming soon')")
+    return project
 
 
 def main():
     if not WORKS_DIR.exists():
         sys.exit(f"Can't find {WORKS_DIR}")
-    works = build()
+    try:
+        site = json.loads((CONTENT / "site.json").read_text(encoding="utf-8"))
+    except (FileNotFoundError, json.JSONDecodeError) as e:
+        sys.exit(f"content/site.json: can't read it ({e})")
+
+    projects = [p for f in WORKS_DIR.iterdir() if f.is_dir() if (p := build_project(f))]
+    projects.sort(key=lambda p: (p.get("order", 10**9), -p.get("year", 0), p["slug"]))
+
+    seen = set()
+    for p in projects:
+        if p["slug"] in seen:
+            errors.append(f"two projects share the address \"{p['slug']}\" — rename a folder")
+        seen.add(p["slug"])
+
     for w in warnings:
         print(f"  warning: {w}")
     for e in errors:
         print(f"  ERROR:   {e}")
     if errors:
-        sys.exit(f"\n{len(errors)} error(s) — fix them and run again. works.json not updated.")
-    OUT.write_text(json.dumps(works, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
-    print(f"\nOK — {len(works)} artwork(s) written to content/works.json"
+        sys.exit(f"\n{len(errors)} error(s) — fix them and run again. data.js not updated.")
+
+    data = {"site": site, "projects": projects}
+    OUT.write_text("// AUTO-GENERATED by tools/build_index.py — don't edit by hand.\n"
+                   "window.SITE_DATA = " + json.dumps(data, indent=2, ensure_ascii=False) + ";\n",
+                   encoding="utf-8")
+    print(f"\nOK — {len(projects)} project(s) written to content/data.js"
           + (f" ({len(warnings)} warning(s))" if warnings else ""))
 
 

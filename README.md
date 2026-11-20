@@ -1,64 +1,57 @@
-# My art website — how files are organized
-
-Everything the website shows lives in `content/`. The site code (added later) only
-reads from there, so you never have to touch code to add or change artwork.
+# Ziqi Zhao — portfolio website
 
 ```
-art-site/
-├── content/                  ← everything the site displays
-│   ├── site.json             ← your name, tagline, contact, social links
-│   ├── series.json           ← (optional) your series/collections, in display order
-│   ├── about/
-│   │   ├── bio.md            ← your About text (plain text, blank line = new paragraph)
-│   │   └── portrait.jpg      ← (optional) photo of you or your studio
-│   ├── works/                ← ONE FOLDER PER ARTWORK
-│   │   ├── 2025-tidal-memory/
-│   │   │   ├── info.json     ← title, year, medium, size, description…
-│   │   │   ├── main.jpg      ← the image shown in the gallery
-│   │   │   ├── detail-1.jpg  ← (optional) close-ups, other angles
-│   │   │   └── detail-2.jpg
-│   │   └── 2024-red-hours/
-│   │       └── …
-│   └── works.json            ← AUTO-GENERATED — don't edit by hand
-├── tools/
-│   └── build_index.py        ← run after adding/changing works
-└── originals/                ← your full-size masters; NOT uploaded (git-ignored)
+index.html              ← home screen (video background + project list)
+project.html            ← one page per project (project.html?p=corridor)
+assets/                 ← site code: css/, js/, fonts/
+content/                ← everything the site displays
+├── site.json           ← your name, homepage video
+├── works/              ← ONE FOLDER PER PROJECT
+│   ├── InfantTower/
+│   │   ├── info.json   ← title, year, medium, order
+│   │   ├── still1.png  ← images and videos, shown in name order
+│   │   └── Fly.mp4
+│   ├── Corridor/  Chair/  Sunny/  3DModels/  Paintings/
+└── data.js             ← AUTO-GENERATED — don't edit by hand
+tools/build_index.py    ← run after any change in content/
+originals/              ← full-size masters; NOT uploaded (git-ignored)
 ```
 
-## Adding a new artwork
+## Adding or changing a project
 
-1. Make a folder in `content/works/` named `YEAR-short-title`, lowercase with hyphens,
-   e.g. `2025-tidal-memory`. That name becomes the artwork's web address.
-2. Put the main image in it, named `main.jpg` (or `main.png` / `main.webp`).
-3. Add any extra images: `detail-1.jpg`, `detail-2.jpg`, … (shown in that order).
-4. Copy `info.json` from an existing work and edit it (fields below).
-5. Run: `python3 tools/build_index.py`  — it checks everything and updates `works.json`.
-6. Commit and push.
+1. Put images/videos in the project's folder in `content/works/`.
+2. Edit its `info.json`:
 
-## info.json fields
+   ```json
+   { "title": "Corridor", "year": 2025, "medium": "Blender-Arduino environmental experience", "order": 2 }
+   ```
 
-| Field         | Required | Example                          | Notes |
-|---------------|----------|----------------------------------|-------|
-| `title`       | yes      | `"Tidal Memory"`                 | |
-| `year`        | yes      | `2025`                           | number |
-| `medium`      | no       | `"Oil on linen"`                 | |
-| `dimensions`  | no       | `"120 × 90 cm"`                  | |
-| `series`      | no       | `"coastlines"`                   | must match an `id` in `series.json` |
-| `description` | no       | `"Painted over one winter…"`     | a few sentences |
-| `tags`        | no       | `["painting", "blue"]`           | used for filtering |
-| `featured`    | no       | `true`                           | shown big on the homepage |
-| `status`      | no       | `"available"`                    | `available`, `sold`, `private`, or leave out |
-| `order`       | no       | `1`                              | lower = shown first; otherwise newest first |
-| `hidden`      | no       | `true`                           | keep the folder but don't show it |
+   | Field     | Notes |
+   |-----------|-------|
+   | `title`   | required — shown big on the home screen |
+   | `year`    | optional number |
+   | `medium`  | optional — small text next to the title |
+   | `order`   | position in the list (1 = top) |
+   | `cover`   | optional file name of the cover image (default: first image) |
+   | `exclude` | optional list of file names in the folder to leave off the page |
+   | `hidden`  | `true` hides the whole project |
 
-> The two example works (`2025-tidal-memory`, `2024-red-hours`) use placeholder `.svg`
-> images. Replace them with your own art — or delete those folders — then re-run the script.
+3. Run `python3 tools/build_index.py` — it checks everything and rebuilds `content/data.js`.
+   (Or ask Claude to run it.)
+4. Commit and push.
 
-## Image guidelines
+Files appear on the project page in name order — prefix with numbers to control it:
+`01-overview.jpg`, `02-detail.jpg`, `03-demo.mp4`.
 
-- **Format:** JPG for paintings/photos, PNG only for flat graphics, WebP also fine.
-- **Size:** long edge about **2400 px**, ideally under **1 MB** each (the build script warns
-  above 2 MB). Big files make the site slow and bloat the git repo.
-- **Color:** export in **sRGB**, otherwise colors look dull on the web.
-- **Names:** lowercase, no spaces: `main.jpg`, `detail-1.jpg`.
-- Keep your huge originals/TIFFs/PSDs in `originals/` — they stay on your computer only.
+## File guidelines
+
+- **Images:** JPG (or PNG for flat graphics), long edge ~2400 px, under ~1–2 MB, sRGB.
+- **Videos:** MP4 (H.264), ideally under ~20 MB. GitHub refuses any file over 100 MB.
+- **Not supported by browsers:** `.HEIC` (iPhone photos) and `.MOV` — export as JPG / MP4.
+  The build script skips them and tells you which ones.
+- Keep huge originals in `originals/` — they stay on your computer only.
+
+## Previewing locally
+
+Open `index.html` directly in a browser, or run `python3 -m http.server` in this folder
+and visit http://localhost:8000.
