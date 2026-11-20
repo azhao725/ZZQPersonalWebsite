@@ -107,11 +107,21 @@ window.SITE_DATA = {
       "media": []
     },
     {
+      "title": "Church",
+      "year": 2026,
+      "medium": "UE5 environment design",
+      "order": 4,
+      "slug": "church",
+      "folder": "Church",
+      "cover": null,
+      "media": []
+    },
+    {
       "title": "Sunny",
       "titleLocal": "阳阳",
       "year": 2025,
       "medium": "Manga",
-      "order": 4,
+      "order": 5,
       "layout": "fullwidth",
       "headerImage": "",
       "descriptionZh": "受到松本大洋与莫比斯的影响，我于2024年画下了《阳阳》\n一个关于在废土世界中，一名在逃守墓童工与他的想象朋友阳阳一起寻找记忆中的粉色热海的故事。",
@@ -148,7 +158,7 @@ window.SITE_DATA = {
     },
     {
       "title": "3D Models",
-      "order": 5,
+      "order": 6,
       "slug": "3dmodels",
       "folder": "3DModels",
       "cover": null,
@@ -158,7 +168,7 @@ window.SITE_DATA = {
       "title": "Paintings&Illus",
       "titleLocal": "画和其他",
       "titleBoth": true,
-      "order": 6,
+      "order": 7,
       "layout": "grid",
       "slug": "paintings",
       "folder": "Paintings",
