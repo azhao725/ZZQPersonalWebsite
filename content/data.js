@@ -19,15 +19,21 @@ window.SITE_DATA = {
       "media": [
         {
           "type": "image",
-          "src": "works/InfantTower/2.png"
+          "src": "works/InfantTower/2.png",
+          "w": 2480,
+          "h": 1450
         },
         {
           "type": "image",
-          "src": "works/InfantTower/3.png"
+          "src": "works/InfantTower/3.png",
+          "w": 2402,
+          "h": 1418
         },
         {
           "type": "image",
-          "src": "works/InfantTower/fireburn.png"
+          "src": "works/InfantTower/fireburn.png",
+          "w": 999,
+          "h": 1265
         },
         {
           "type": "video",
@@ -35,11 +41,15 @@ window.SITE_DATA = {
         },
         {
           "type": "image",
-          "src": "works/InfantTower/still1.png"
+          "src": "works/InfantTower/still1.png",
+          "w": 2343,
+          "h": 1291
         },
         {
           "type": "image",
-          "src": "works/InfantTower/屏幕截图 2026-05-22 002041.png"
+          "src": "works/InfantTower/屏幕截图 2026-05-22 002041.png",
+          "w": 1990,
+          "h": 1229
         }
       ]
     },
@@ -62,7 +72,9 @@ window.SITE_DATA = {
         },
         {
           "type": "image",
-          "src": "works/Corridor/setup1.JPG"
+          "src": "works/Corridor/setup1.JPG",
+          "w": 6000,
+          "h": 4000
         },
         {
           "type": "video",
@@ -70,7 +82,9 @@ window.SITE_DATA = {
         },
         {
           "type": "image",
-          "src": "works/Corridor/setupscreen.JPG"
+          "src": "works/Corridor/setupscreen.JPG",
+          "w": 6000,
+          "h": 4000
         }
       ]
     },
@@ -100,19 +114,27 @@ window.SITE_DATA = {
       "media": [
         {
           "type": "image",
-          "src": "works/Sunny/Yangyang1.jpg"
+          "src": "works/Sunny/Yangyang1.jpg",
+          "w": 1179,
+          "h": 1556
         },
         {
           "type": "image",
-          "src": "works/Sunny/Yangyang2.jpg"
+          "src": "works/Sunny/Yangyang2.jpg",
+          "w": 1179,
+          "h": 1463
         },
         {
           "type": "image",
-          "src": "works/Sunny/Yangyang3.jpg"
+          "src": "works/Sunny/Yangyang3.jpg",
+          "w": 1168,
+          "h": 1468
         },
         {
           "type": "image",
-          "src": "works/Sunny/Yangyang4.jpg"
+          "src": "works/Sunny/Yangyang4.jpg",
+          "w": 1161,
+          "h": 1467
         }
       ]
     },
@@ -133,27 +155,39 @@ window.SITE_DATA = {
       "media": [
         {
           "type": "image",
-          "src": "works/Paintings/20Portraits.JPG"
+          "src": "works/Paintings/20Portraits.JPG",
+          "w": 4033,
+          "h": 3024
         },
         {
           "type": "image",
-          "src": "works/Paintings/fxn 2025-04-14 203247.295.jpg"
+          "src": "works/Paintings/fxn 2025-04-14 203247.295.jpg",
+          "w": 4031,
+          "h": 3024
         },
         {
           "type": "image",
-          "src": "works/Paintings/fxn 2025-04-14 203454.273.jpg"
+          "src": "works/Paintings/fxn 2025-04-14 203454.273.jpg",
+          "w": 4031,
+          "h": 3024
         },
         {
           "type": "image",
-          "src": "works/Paintings/fxn 2025-04-14 203538.610.jpg"
+          "src": "works/Paintings/fxn 2025-04-14 203538.610.jpg",
+          "w": 3887,
+          "h": 2599
         },
         {
           "type": "image",
-          "src": "works/Paintings/WechatIMG165.jpg"
+          "src": "works/Paintings/WechatIMG165.jpg",
+          "w": 1179,
+          "h": 1469
         },
         {
           "type": "image",
-          "src": "works/Paintings/WechatIMG167.jpg"
+          "src": "works/Paintings/WechatIMG167.jpg",
+          "w": 1179,
+          "h": 1512
         }
       ]
     }

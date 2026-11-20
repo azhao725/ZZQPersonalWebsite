@@ -69,6 +69,7 @@
         loading: k < 2 ? "eager" : "lazy",
         decoding: "async",
       });
+      if (m.w && m.h) { el.width = m.w; el.height = m.h; }   // reserves space while loading
     }
     media.appendChild(el);
   });
