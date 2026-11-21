@@ -16,10 +16,11 @@
   background: #000;
   color: #fff;
   font-family: var(--serif);
-  font-size: clamp(14px, 1.05vw, 18px);
+  font-size: clamp(13px, .85vw, 15px);
   line-height: 1.45;
   padding-top: clamp(60px, 10vh, 130px);
 }
+.cv__head, .cv__lower { max-width: 1080px; margin-left: auto; margin-right: auto; }
 .cv::before {                        /* soft fade from the video into the CV */
   content: ""; position: absolute; left: 0; right: 0; bottom: 100%; height: 30vh; pointer-events: none;
   background: linear-gradient(180deg, rgba(0,0,0,0), #000);
@@ -29,16 +30,16 @@
 .cv p { max-width: none; }
 
 /* name */
-.cv__head { padding: 0 clamp(20px, 13vw, 250px); }
+.cv__head { padding: 0 var(--pad); }
 .cv__head h2 { display: flex; flex-direction: column; font-weight: 400; line-height: 1; }
-.cv__en { font-family: "Libre Caslon Text", var(--serif); font-weight: 400; text-transform: uppercase; font-size: clamp(44px, 6.4vw, 124px); letter-spacing: .005em; }
-.cv__zh { font-family: var(--song); font-weight: 900; font-size: clamp(48px, 7vw, 134px); margin-top: .12em; letter-spacing: .02em; }
+.cv__en { font-family: "Libre Caslon Text", var(--serif); font-weight: 400; text-transform: uppercase; font-size: clamp(38px, 4.4vw, 80px); letter-spacing: .005em; }
+.cv__zh { font-family: var(--song); font-weight: 900; font-size: clamp(40px, 4.8vw, 86px); margin-top: .12em; letter-spacing: .02em; }
 
 /* Wikipedia-style info box */
 .cv__box {
-  width: min(88vw, 400px);
-  margin: clamp(80px, 14vh, 190px) auto 0;
-  font-size: clamp(14px, 1.15vw, 19px);
+  width: min(88vw, 300px);
+  margin: clamp(50px, 8vh, 100px) auto 0;
+  font-size: clamp(13px, .9vw, 15px);
 }
 .cv__boxname { text-align: center; font-weight: 700; line-height: 1.35; margin-bottom: 14px; }
 .cv__box figure { margin: 0; }
@@ -49,30 +50,22 @@
 .cv__box dl { display: grid; grid-template-columns: 40% 1fr; gap: 10px 0; margin-top: 18px; }
 .cv__box dt { font-weight: 700; }
 
-/* lower half: over the dimmed childhood photo */
-.cv__lower { position: relative; isolation: isolate; margin-top: clamp(70px, 10vh, 120px); padding: 0 clamp(20px, 13vw, 250px) clamp(60px, 10vh, 120px); overflow: hidden; }
-.cv__lower::before {
-  content: ""; position: absolute; z-index: -1;
-  left: 0; right: 0; top: clamp(140px, 22vh, 260px); bottom: 0;
-  background: url("../../content/about/childhood.jpg") center 30% / cover no-repeat;
-  filter: brightness(.2) blur(2.5px);
-  -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 22%, #000 78%, transparent 100%);
-          mask-image: linear-gradient(180deg, transparent 0, #000 22%, #000 78%, transparent 100%);
-}
+/* lower half: bio, three columns, contact */
+.cv__lower { margin-top: clamp(50px, 8vh, 90px); padding: 0 var(--pad) clamp(50px, 8vh, 90px); }
 
-.cv__bio { display: grid; gap: 1.2em; max-width: 1180px; font-size: clamp(14px, 1.08vw, 18px); }
+.cv__bio { display: grid; gap: 1.1em; font-size: clamp(13px, .9vw, 15px); }
 .cv__bio [lang="zh"] { font-weight: 700; }
 .cv__bio p + p { margin-top: .3em; }
 
 .cv__cols {
   display: grid; grid-template-columns: 1fr 1.15fr 1fr; gap: clamp(28px, 4vw, 70px);
-  margin-top: clamp(60px, 9vh, 110px);
-  font-size: clamp(13px, .92vw, 16px);
+  margin-top: clamp(44px, 7vh, 80px);
+  font-size: clamp(12px, .8vw, 14px);
 }
 .cv__col { display: grid; align-content: start; gap: clamp(36px, 5vh, 56px); }
 .cv h3 { display: flex; align-items: baseline; gap: 14px; margin-bottom: 18px; font-weight: 400; }
-.cv h3 [lang="zh"] { font-size: clamp(28px, 2.3vw, 44px); font-weight: 900; }
-.cv h3 small { font-family: "Libre Caslon Text", var(--serif); font-size: clamp(14px, 1.1vw, 20px); text-transform: uppercase; letter-spacing: .08em; color: rgba(255,255,255,.75); }
+.cv h3 [lang="zh"] { font-size: clamp(22px, 1.7vw, 30px); font-weight: 900; }
+.cv h3 small { font-family: "Libre Caslon Text", var(--serif); font-size: clamp(11px, .8vw, 14px); text-transform: uppercase; letter-spacing: .08em; color: rgba(255,255,255,.75); }
 .cv section p + p { margin-top: .7em; }
 .cv .en { color: rgba(255,255,255,.78); }
 
@@ -93,7 +86,7 @@
 .cv__skills dt { font-weight: 700; margin-top: 12px; }
 .cv__skills dt:first-child { margin-top: 0; }
 
-.cv__contact { text-align: center; margin-top: clamp(80px, 13vh, 160px); font-size: clamp(22px, 2.6vw, 46px); line-height: 1.3; }
+.cv__contact { text-align: center; margin-top: clamp(60px, 10vh, 120px); font-size: clamp(18px, 1.7vw, 30px); line-height: 1.35; }
 .cv__contact h3 { justify-content: center; font-weight: 700; font-size: 1em; margin-bottom: 6px; }
 .cv__contact h3 [lang="zh"] { font-size: .5em; font-weight: 400; opacity: .7; }
 .cv__contact a:hover { text-decoration: underline; text-underline-offset: 4px; }
@@ -102,5 +95,4 @@
 
 @media (max-width: 900px) {
   .cv__cols { grid-template-columns: 1fr; }
-  .cv__head, .cv__lower { padding-left: var(--pad); padding-right: var(--pad); }
 }

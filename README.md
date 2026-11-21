@@ -52,7 +52,7 @@ Files appear on the project page in name order — prefix with numbers to contro
 ## About / CV (homepage, below the projects)
 
 Written directly in `index.html` (section `#about`), styled by `assets/css/about.css`.
-Photos: `content/about/portrait.jpg` and `content/about/childhood.jpg`.
+Photo: `content/about/portrait.jpg`.
 
 ## Hand-built pages
 
