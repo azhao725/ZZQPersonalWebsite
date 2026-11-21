@@ -20,7 +20,7 @@
   line-height: 1.45;
   padding-top: clamp(60px, 10vh, 130px);
 }
-.cv__head, .cv__lower { max-width: 1080px; margin-left: auto; margin-right: auto; }
+.cv__lower { max-width: 1080px; margin-left: auto; margin-right: auto; }
 .cv::before {                        /* soft fade from the video into the CV */
   content: ""; position: absolute; left: 0; right: 0; bottom: 100%; height: 30vh; pointer-events: none;
   background: linear-gradient(180deg, rgba(0,0,0,0), #000);
@@ -29,16 +29,10 @@
 .cv a { color: inherit; }
 .cv p { max-width: none; }
 
-/* name */
-.cv__head { padding: 0 var(--pad); }
-.cv__head h2 { display: flex; flex-direction: column; font-weight: 400; line-height: 1; }
-.cv__en { font-family: "Libre Caslon Text", var(--serif); font-weight: 400; text-transform: uppercase; font-size: clamp(38px, 4.4vw, 80px); letter-spacing: .005em; }
-.cv__zh { font-family: var(--song); font-weight: 900; font-size: clamp(40px, 4.8vw, 86px); margin-top: .12em; letter-spacing: .02em; }
-
 /* Wikipedia-style info box */
 .cv__box {
   width: min(88vw, 300px);
-  margin: clamp(50px, 8vh, 100px) auto 0;
+  margin: 0 auto;
   font-size: clamp(13px, .9vw, 15px);
 }
 .cv__boxname { text-align: center; font-weight: 700; line-height: 1.35; margin-bottom: 14px; }
