@@ -49,6 +49,11 @@ originals/              ← full-size masters; NOT uploaded (git-ignored)
 Files appear on the project page in name order — prefix with numbers to control it:
 `01-overview.jpg`, `02-detail.jpg`, `03-demo.mp4`.
 
+## About / CV (homepage, below the projects)
+
+Written directly in `index.html` (section `#about`), styled by `assets/css/about.css`.
+Photos: `content/about/portrait.jpg` and `content/about/childhood.jpg`.
+
 ## Hand-built pages
 
 Some projects have their own page instead of the automatic one. Set `"page"` in the project's

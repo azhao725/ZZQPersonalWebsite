@@ -6,9 +6,11 @@
   <title>Ziqi Zhao — Portfolio</title>
   <meta name="description" content="Portfolio of Ziqi Zhao — games, environmental experiences, manga, 3D and painting.">
   <link rel="preload" href="assets/fonts/anton-latin-400-normal.woff2?v=912c3c9f26" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/css/style.css?v=85b05f122b">
+  <link rel="preload" href="assets/fonts/libre-caslon-text-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/style.css?v=76b13675a1">
+  <link rel="stylesheet" href="assets/css/about.css?v=0121c58680">
 </head>
-<body class="home">
+<body class="home" id="top">
   <video class="bg-video" id="bgVideo" autoplay muted loop playsinline preload="auto"></video>
   <div class="bg-shade" aria-hidden="true"></div>
   <nav class="stack" id="stack" aria-label="Projects">
@@ -16,11 +18,133 @@
     <div class="stack__divider"><span>Selected work</span><span id="count"></span></div>
     <ol class="stack__list" id="list"></ol>
   </nav>
+
+  <!-- ============ About / CV (scroll down from the project list) ============ -->
+  <section class="cv" id="about" aria-labelledby="cvName">
+    <header class="cv__head">
+      <h2 id="cvName"><span class="cv__en">Ziqi Zhao</span><span class="cv__zh" lang="zh">赵子琪</span></h2>
+    </header>
+
+    <aside class="cv__box" aria-label="Profile">
+      <p class="cv__boxname">Ziqi Zhao<br><span lang="zh">赵子琪</span></p>
+      <figure>
+        <img src="content/about/portrait.jpg?v=df8f475150" width="1200" height="824" alt="Ziqi Zhao drinking from a cup at night" loading="lazy">
+        <figcaption>Ziqi Zhao in <a href="https://en.wikipedia.org/wiki/Shanghai" target="_blank" rel="noopener">Shanghai</a>, 2024</figcaption>
+      </figure>
+      <dl>
+        <dt>Born</dt><dd>Ziqi Zhao<br>2006 (age 19–20)<br><a href="https://en.wikipedia.org/wiki/Beijing" target="_blank" rel="noopener">Beijing</a>, China</dd>
+        <dt>Nationality</dt><dd>Chinese</dd>
+        <dt>Education</dt><dd>BFA Art &amp; Computation, <a href="https://www.risd.edu" target="_blank" rel="noopener">Rhode Island School of Design</a></dd>
+        <dt>Known for</dt><dd>Doing Art</dd>
+      </dl>
+    </aside>
+
+    <div class="cv__lower">
+      <div class="cv__bio">
+        <div lang="zh">
+          <p>生于北京，现居深圳和普罗维登斯。</p>
+          <p>从小沉迷评书，漫画，动画，电影，游戏等各类叙事艺术作品。认为好故事能拯救世界。</p>
+          <p>14年绘画经验，6年纯艺研究，如今就读于RISD，从事独立游戏开发与创意交互。</p>
+        </div>
+        <div>
+          <p>Born in Beijing, currently based between Shenzhen and Providence.</p>
+          <p>Growing up immersed in storytelling across mediums—traditional oral narratives, comics, animation, film, and games—I developed a strong interest in narrative as a perceptual structure. My work explores memory, space, and illusion through interactive media, with a focus on personal and experiential storytelling.</p>
+          <p>With 14 years of painting practice and 6 years of fine art training, I am currently studying at the Rhode Island School of Design (RISD), working in independent game development and interactive art.</p>
+        </div>
+      </div>
+
+      <div class="cv__cols">
+        <div class="cv__col">
+          <section>
+            <h3><span lang="zh">教育</span><small>Education</small></h3>
+            <p><span lang="zh">罗德岛设计学院</span><br><span class="en">Rhode Island School of Design (RISD)</span></p>
+            <p><span lang="zh">艺术与计算机专业</span><br><span class="en">BFA Art &amp; Computation</span></p>
+            <p>GPA: 3.97 / 4.0</p>
+          </section>
+
+          <section>
+            <h3><span lang="zh">实习经历</span><small>Experience</small></h3>
+            <article class="cv__job">
+              <p class="cv__when">2025年5月–9月 <span class="en">May–Sep 2025</span></p>
+              <p><b lang="zh">AI物理仿真数字资产开发实习</b><br><span class="en"><b>AI Physics Simulation Digital Asset Development Intern</b></span></p>
+              <p><span lang="zh">章江科技有限公司</span><br><span class="en">Zhangjiang Technology Co., Ltd.</span></p>
+              <ol>
+                <li><span lang="zh">使用Blender建模场景资产，为物流搬运机器人视觉AI训练构筑仿真环境</span><span class="en">Modeled scene assets in Blender to build simulation environments for training the vision AI of logistics robots.</span></li>
+                <li><span lang="zh">在Isaac Sim物理引擎快速完成多种现实场景搭建，并组装物理系统</span><span class="en">Rapidly built a range of real-world scenes in the Isaac Sim physics engine and assembled their physics systems.</span></li>
+                <li><span lang="zh">参与开发参数化建模与域随机化系统，协作优化instance segmentation视觉识别算法训练效率</span><span class="en">Helped develop parametric modeling and domain-randomization systems, working with the team to improve training efficiency for instance-segmentation vision models.</span></li>
+              </ol>
+            </article>
+            <article class="cv__job">
+              <p class="cv__when">2024年7月 <span class="en">Jul 2024</span></p>
+              <p><b lang="zh">游戏设计夏令营助教</b><br><span class="en"><b>Teaching Assistant, Game Design Summer Camp</b></span></p>
+              <p><span lang="zh">清澜山学校美术学院</span><br><span class="en">Tsinglan School, School of Art</span></p>
+              <ol>
+                <li><span lang="zh">游戏叙事设计教学：指导学生构建游戏世界观、角色设定与剧情分支，培养创意写作与互动叙事能力</span><span class="en">Game narrative design: guided students in building game worlds, characters and branching storylines, developing their creative writing and interactive storytelling.</span></li>
+                <li><span lang="zh">Unity引擎基础教学：带领学生掌握platformer场景搭建、基础简单交互功能实现</span><span class="en">Unity fundamentals: taught students to build platformer levels and implement basic interactions.</span></li>
+                <li><span lang="zh">项目实践指导：协助学生完成2D小型游戏Demo开发</span><span class="en">Project mentoring: helped students complete small 2D game demos.</span></li>
+              </ol>
+            </article>
+          </section>
+        </div>
+
+        <div class="cv__col">
+          <section>
+            <h3><span lang="zh">证书</span><small>Honors</small></h3>
+            <dl class="cv__honors">
+              <dt><span lang="zh">AP Drawing满分奖（全球约200人获得）</span><span class="en">AP Drawing perfect score (awarded to about 200 students worldwide)</span></dt>
+              <dd>2023年7月<span class="en">Jul 2023</span></dd>
+              <dt><span lang="zh">罗德岛设计学院荣誉学生</span><span class="en">Honors Student, Rhode Island School of Design</span></dt>
+              <dd>2025年2月<span class="en">Feb 2025</span></dd>
+            </dl>
+          </section>
+
+          <section>
+            <h3><span lang="zh">课程</span><small>Courses</small></h3>
+            <article class="cv__course">
+              <p><b>CTC2019 — Worlds Within: Creative Games and Creative Agency</b></p>
+              <p lang="zh">通过体验、分析与创作概念性艺术游戏，探索以个人表达为核心的互动形式。课程强调非线性叙事、个体经验与创造性探索。使用 Unity 学习基础编程、3D建模（ProBuilder）以及环境叙事。</p>
+              <p class="en">Explored concept-driven artistic games centered on personal expression and non-linear storytelling. Developed interactive works using Unity, focusing on basic programming, 3D modeling (ProBuilder), and environmental storytelling.</p>
+            </article>
+            <article class="cv__course">
+              <p><b>CTC2104 — Experimental Unreal</b></p>
+              <p lang="zh">将游戏引擎视为当代艺术创作工具，探索实验性数字实践，包括生成设计、推测性世界构建以及AI与物理驱动系统。使用 Unreal Engine，重点学习蓝图（Blueprints）、Niagara粒子系统与AI行为树。课程同时结合实验电影、建筑与艺术运动（如情境主义、具体派、新具体主义）的理论讨论。</p>
+              <p class="en">Reframed game engines as tools for experimental art practice. Developed projects in Unreal Engine, exploring emergent design, speculative worldbuilding, and AI/physics-driven systems. Gained experience with Blueprints, Niagara, and AI Behavior Trees, alongside research in experimental film, architecture, and process-based art movements such as Situationism, Gutai, and Neo-Concretism.</p>
+            </article>
+          </section>
+        </div>
+
+        <div class="cv__col">
+          <section>
+            <h3><span lang="zh">技能</span><small>Skills</small></h3>
+            <dl class="cv__skills">
+              <dt>3D</dt><dd>Blender, ZBrush, Maya, 3ds Max, Substance Painter</dd>
+              <dt><span lang="zh">游戏</span> Game</dt><dd>Unity, Unreal</dd>
+              <dt><span lang="zh">网页</span> Web</dt><dd>HTML, CSS, JavaScript, Three.js, Figma</dd>
+              <dt><span lang="zh">视频</span> Video</dt><dd>Premiere Pro, After Effects</dd>
+              <dt>AIGC</dt><dd>Stable Diffusion</dd>
+              <dt><span lang="zh">硬件</span> Hardware</dt><dd>Arduino, SolidWorks, <span lang="zh">激光切割</span> Laser Cutting, <span lang="zh">串口绘图</span> Serial Plotter, <span lang="zh">3D打印</span> 3D Printing</dd>
+              <dt>2D</dt><dd>Procreate, TVPaint, Photoshop, Illustrator</dd>
+              <dt><span lang="zh">物理引擎</span> Physics Engine</dt><dd>Isaac Sim</dd>
+              <dt><span lang="zh">编程语言</span> Coding Languages</dt><dd>C#, JavaScript, Python, p5.js</dd>
+            </dl>
+          </section>
+        </div>
+      </div>
+
+      <footer class="cv__contact" id="contact">
+        <h3>Contact <span lang="zh">联系方式</span></h3>
+        <p><a href="tel:+14013467471">+1 401-346-7471</a></p>
+        <p><a href="tel:+8618576718112">+86 185 7671 8112</a></p>
+        <p><a href="mailto:ziqizhao146@gmail.com">ziqizhao146@gmail.com</a></p>
+        <a class="cv__top" href="#top">↑ Back to top</a>
+      </footer>
+    </div>
+  </section>
   <aside class="readout" aria-live="polite">
     <p class="readout__label">Portfolio of<br><span id="readoutName">Ziqi Zhao</span></p>
     <p class="readout__label readout__now" id="readout">Hover a project<br>&nbsp;</p>
   </aside>
   <script src="content/data.js?v=e04e2d3a2c"></script>
-  <script src="assets/js/home.js?v=c376585df6"></script>
+  <script src="assets/js/home.js?v=8482b05790"></script>
 </body>
 </html>

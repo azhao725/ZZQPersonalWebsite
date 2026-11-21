@@ -99,17 +99,24 @@
     list.addEventListener("mouseleave", () => { lastX = null; });
   }
 
+  // --- the right-hand readout steps aside once the CV scrolls into view ---
+  const about = document.getElementById("about");
+  const aside = document.querySelector(".readout");
+  if (about && aside && "IntersectionObserver" in window) {
+    new IntersectionObserver(([e]) => aside.classList.toggle("is-away", e.isIntersecting),
+      { rootMargin: "0px 0px -30% 0px" }).observe(about);
+  }
+
   // --- scroll motion: while scrolling, lines trail the scroll a little (lower lines more,
   //     so the stack stretches like a spring) and lean with the speed; at rest nothing changes ---
   if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    const stack = document.getElementById("stack");
     const lines = [document.getElementById("name"), document.querySelector(".stack__divider"), ...list.children];
     // the load-in animation holds its own transform; release it once it has played
     lines.forEach((el) => el.addEventListener("animationend", () => el.classList.remove("reveal"), { once: true }));
 
-    let current = stack.scrollTop, running = false;
+    let current = window.scrollY, running = false;
     const frame = () => {
-      const target = stack.scrollTop;
+      const target = window.scrollY;
       current += (target - current) * 0.085;
       const diff = target - current;                       // how far the motion is behind the scroll
       if (Math.abs(diff) < 0.15) {
@@ -125,7 +132,7 @@
       });
       requestAnimationFrame(frame);
     };
-    stack.addEventListener("scroll", () => {
+    window.addEventListener("scroll", () => {
       if (!running) { running = true; requestAnimationFrame(frame); }
     }, { passive: true });
   }
