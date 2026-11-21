@@ -2,6 +2,8 @@
   "title": "Corridor",
   "year": 2025,
   "medium": "Blender-Arduino environmental experience",
-  "order": 2,
-  "exclude": ["home-video-light.mp4"]
+  "order": 5,
+  "exclude": [
+    "home-video-light.mp4"
+  ]
 }

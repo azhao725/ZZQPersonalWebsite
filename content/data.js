@@ -120,10 +120,96 @@ window.SITE_DATA = {
       ]
     },
     {
+      "title": "Sunny",
+      "titleLocal": "阳阳",
+      "year": 2025,
+      "medium": "Manga",
+      "order": 2,
+      "layout": "fullwidth",
+      "headerImage": "SunnyRun-web.png",
+      "descriptionZh": "受到松本大洋与莫比斯的影响，我于2024年画下了《阳阳》\n一个关于在废土世界中，一名在逃守墓童工与他的想象朋友阳阳一起寻找记忆中的粉色热海的故事。",
+      "description": "Influenced by Taiyo Matsumoto and Moebius, I created Yangyang in 2024.\nThe project follows a fugitive child gravedigger in a post-apocalyptic wasteland, who travels alongside his imaginary companion, Yangyang, in search of a pink seaside town remembered only through fragments of memory.",
+      "slug": "sunny",
+      "folder": "Sunny",
+      "cover": "works/Sunny/Yangyang1.jpg",
+      "media": [
+        {
+          "type": "image",
+          "src": "works/Sunny/Yangyang1.jpg",
+          "v": "061c193eed",
+          "w": 1179,
+          "h": 1556
+        },
+        {
+          "type": "image",
+          "src": "works/Sunny/Yangyang2.jpg",
+          "v": "546a4ed99c",
+          "w": 1179,
+          "h": 1463
+        },
+        {
+          "type": "image",
+          "src": "works/Sunny/Yangyang3.jpg",
+          "v": "866a00cf64",
+          "w": 1168,
+          "h": 1468
+        },
+        {
+          "type": "image",
+          "src": "works/Sunny/Yangyang4.jpg",
+          "v": "a8739383cf",
+          "w": 1161,
+          "h": 1467
+        }
+      ]
+    },
+    {
+      "title": "Church",
+      "year": 2026,
+      "medium": "UE5 environment design",
+      "order": 3,
+      "layout": "film",
+      "slug": "church",
+      "folder": "Church",
+      "cover": null,
+      "media": [
+        {
+          "type": "video",
+          "src": "works/Church/final-walkthrough.mp4",
+          "v": "df507643e8",
+          "w": 1920,
+          "h": 1086,
+          "poster": "works/Church/final-walkthrough-poster.jpg",
+          "d": 75
+        }
+      ]
+    },
+    {
+      "title": "Chair",
+      "year": 2026,
+      "medium": "Experimental Unreal game",
+      "order": 4,
+      "layout": "film",
+      "slug": "chair",
+      "folder": "Chair",
+      "cover": null,
+      "media": [
+        {
+          "type": "video",
+          "src": "works/Chair/Chair.mp4",
+          "v": "5222c51ed1",
+          "w": 1920,
+          "h": 1044,
+          "poster": "works/Chair/Chair-poster.jpg",
+          "d": 80
+        }
+      ]
+    },
+    {
       "title": "Corridor",
       "year": 2025,
       "medium": "Blender-Arduino environmental experience",
-      "order": 2,
+      "order": 5,
       "slug": "corridor",
       "folder": "Corridor",
       "cover": "works/Corridor/setup1.JPG",
@@ -165,92 +251,6 @@ window.SITE_DATA = {
           "v": "cca11c9718",
           "w": 6000,
           "h": 4000
-        }
-      ]
-    },
-    {
-      "title": "Chair",
-      "year": 2026,
-      "medium": "Experimental Unreal game",
-      "order": 3,
-      "layout": "film",
-      "slug": "chair",
-      "folder": "Chair",
-      "cover": null,
-      "media": [
-        {
-          "type": "video",
-          "src": "works/Chair/Chair.mp4",
-          "v": "5222c51ed1",
-          "w": 1920,
-          "h": 1044,
-          "poster": "works/Chair/Chair-poster.jpg",
-          "d": 80
-        }
-      ]
-    },
-    {
-      "title": "Church",
-      "year": 2026,
-      "medium": "UE5 environment design",
-      "order": 4,
-      "layout": "film",
-      "slug": "church",
-      "folder": "Church",
-      "cover": null,
-      "media": [
-        {
-          "type": "video",
-          "src": "works/Church/final-walkthrough.mp4",
-          "v": "df507643e8",
-          "w": 1920,
-          "h": 1086,
-          "poster": "works/Church/final-walkthrough-poster.jpg",
-          "d": 75
-        }
-      ]
-    },
-    {
-      "title": "Sunny",
-      "titleLocal": "阳阳",
-      "year": 2025,
-      "medium": "Manga",
-      "order": 5,
-      "layout": "fullwidth",
-      "headerImage": "SunnyRun-web.png",
-      "descriptionZh": "受到松本大洋与莫比斯的影响，我于2024年画下了《阳阳》\n一个关于在废土世界中，一名在逃守墓童工与他的想象朋友阳阳一起寻找记忆中的粉色热海的故事。",
-      "description": "Influenced by Taiyo Matsumoto and Moebius, I created Yangyang in 2024.\nThe project follows a fugitive child gravedigger in a post-apocalyptic wasteland, who travels alongside his imaginary companion, Yangyang, in search of a pink seaside town remembered only through fragments of memory.",
-      "slug": "sunny",
-      "folder": "Sunny",
-      "cover": "works/Sunny/Yangyang1.jpg",
-      "media": [
-        {
-          "type": "image",
-          "src": "works/Sunny/Yangyang1.jpg",
-          "v": "061c193eed",
-          "w": 1179,
-          "h": 1556
-        },
-        {
-          "type": "image",
-          "src": "works/Sunny/Yangyang2.jpg",
-          "v": "546a4ed99c",
-          "w": 1179,
-          "h": 1463
-        },
-        {
-          "type": "image",
-          "src": "works/Sunny/Yangyang3.jpg",
-          "v": "866a00cf64",
-          "w": 1168,
-          "h": 1468
-        },
-        {
-          "type": "image",
-          "src": "works/Sunny/Yangyang4.jpg",
-          "v": "a8739383cf",
-          "w": 1161,
-          "h": 1467
         }
       ]
     },
