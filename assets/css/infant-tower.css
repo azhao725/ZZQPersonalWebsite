@@ -1,37 +1,37 @@
 /* Infant Tower — the layout sheet shown as-is, with interactive spots on top.
    Spots are positioned in the sheet's own pixels (1920 × 23120). */
 @font-face { font-family: "Libre Caslon Text"; src: url("../fonts/libre-caslon-text-latin-400-normal.woff2") format("woff2"); font-weight: 400; font-display: swap; }
-@font-face { font-family: "Courier Prime"; src: url("../fonts/courier-prime-latin-400-normal.woff2") format("woff2"); font-weight: 400; font-display: swap; }
 
 .it { background: #0b0f0d; color: #fff; --su: calc(min(100vw, 1920px) / 1920); }   /* 1 sheet pixel */
 
-/* title block — same type as the sheet: Caslon-style serif + light mono numerals */
+/* title block — bold serif caps + the same Chinese title face as Sunny's 阳阳 */
+@font-face { font-family: "Libre Caslon Text"; src: url("../fonts/libre-caslon-text-latin-700-normal.woff2") format("woff2"); font-weight: 700; font-display: swap; }
 .it-title {
   position: absolute; left: 0; right: 0; top: 0;
   height: calc(850 / 23120 * 100%);
-  display: flex; flex-direction: column; align-items: center; justify-content: center;
-  padding-top: calc(var(--su) * 40);
-  text-align: center; z-index: 2; pointer-events: none;
-  text-shadow: 0 2px calc(var(--su) * 30) rgba(0,0,0,.55);
+  display: flex; align-items: flex-start;
+  padding: max(54px, calc(var(--su) * 120)) max(24px, calc(var(--su) * 120)) 0;
+  z-index: 2; pointer-events: none;
+  text-shadow: 0 2px calc(var(--su) * 30) rgba(0,0,0,.45);
 }
-.it-title__year {
-  font-family: "Courier Prime", "Courier New", monospace;
-  font-size: max(11px, calc(var(--su) * 54)); line-height: 1; letter-spacing: .06em;
-  opacity: .9;
-}
-.it-title__name {
+.it-title__name { display: flex; flex-direction: column; align-items: flex-start; font-weight: 400; }
+.it-title__en {
   font-family: "Libre Caslon Text", Georgia, "Times New Roman", serif;
-  font-weight: 400;
-  font-size: max(30px, calc(var(--su) * 178)); line-height: 1.05; letter-spacing: -.005em;
-  margin-top: calc(var(--su) * 28);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: max(26px, calc(var(--su) * 150));
+  line-height: 1;
+  letter-spacing: -.01em;
+  white-space: nowrap;
 }
-.it-title__kind {
-  font-family: "Libre Caslon Text", Georgia, "Times New Roman", serif;
-  font-size: max(11px, calc(var(--su) * 34)); line-height: 1;
-  margin-top: calc(var(--su) * 34);
-  padding-top: calc(var(--su) * 30);
-  border-top: 1px solid rgba(255,255,255,.55);
-  min-width: calc(var(--su) * 260);
+.it-title__zh {                        /* same stack and weight as .project__title.is-local (阳阳) */
+  font-family: "Songti SC", "STSong", "SimSun", "Noto Serif CJK SC", "Noto Serif SC",
+               "Source Han Serif SC", "Noto Serif CJK TC", serif;
+  font-weight: 900;
+  font-size: max(34px, calc(var(--su) * 205));
+  line-height: 1;
+  letter-spacing: .02em;
+  margin-top: calc(var(--su) * 42);
 }
 
 .it-top {
