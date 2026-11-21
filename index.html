@@ -5,12 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Ziqi Zhao — Portfolio</title>
   <meta name="description" content="Portfolio of Ziqi Zhao — games, environmental experiences, manga, 3D and painting.">
-  <link rel="preload" href="assets/fonts/anton-latin-400-normal.woff2?v=912c3c9f26" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/css/style.css?v=f19e626de7">
+  <link rel="preload" href="assets/fonts/anton-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/style.css?v=125b1f849f">
 </head>
 <body class="home">
   <video class="bg-video" id="bgVideo" autoplay muted loop playsinline preload="auto"></video>
   <div class="bg-shade" aria-hidden="true"></div>
+  <div class="scanlines" aria-hidden="true"></div>
+  <div class="focusline" id="focusline" aria-hidden="true"><span id="focuslabel">01 / 07</span></div>
+  <div class="rail" id="rail" aria-hidden="true">
+    <span class="rail__track"><span class="rail__fill" id="railFill"></span></span>
+    <ol class="rail__ticks" id="railTicks"></ol>
+    <span class="rail__pct" id="railPct">000</span>
+  </div>
   <nav class="stack" id="stack" aria-label="Projects">
     <h1 class="stack__name" id="name">Ziqi Zhao</h1>
     <div class="stack__divider"><span>Selected work</span><span id="count"></span></div>
@@ -21,6 +28,6 @@
     <p class="readout__label readout__now" id="readout">Hover a project<br>&nbsp;</p>
   </aside>
   <script src="content/data.js?v=e04e2d3a2c"></script>
-  <script src="assets/js/home.js?v=dbcc2dcd2c"></script>
+  <script src="assets/js/home.js?v=d6aa68dc01"></script>
 </body>
 </html>

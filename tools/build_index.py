@@ -96,7 +96,8 @@ def file_hash(path: Path) -> str:
 def stamp_pages(version: str):
     """Add ?v=<fingerprint> to every local file a page loads (css, js, data, images, video),
     so browsers fetch a fresh copy whenever that file changes — and keep their copy otherwise."""
-    ref = re.compile(r'((?:src|href|poster)=")((?:assets|content)/[^"?#]+)(?:\?v=[^"]*)?(")')
+    # fonts are left alone: the stylesheet loads them by plain URL, and a preload must match it exactly
+    ref = re.compile(r'((?:src|href|poster)=")((?:assets/(?!fonts/)|content/)[^"?#]+)(?:\?v=[^"]*)?(")')
     for page in ROOT.glob("*.html"):
         html = page.read_text(encoding="utf-8")
 
