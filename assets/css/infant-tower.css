@@ -1,6 +1,38 @@
 /* Infant Tower — the layout sheet shown as-is, with interactive spots on top.
    Spots are positioned in the sheet's own pixels (1920 × 23120). */
-.it { background: #0b0f0d; color: #fff; }
+@font-face { font-family: "Libre Caslon Text"; src: url("../fonts/libre-caslon-text-latin-400-normal.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Courier Prime"; src: url("../fonts/courier-prime-latin-400-normal.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+
+.it { background: #0b0f0d; color: #fff; --su: calc(min(100vw, 1920px) / 1920); }   /* 1 sheet pixel */
+
+/* title block — same type as the sheet: Caslon-style serif + light mono numerals */
+.it-title {
+  position: absolute; left: 0; right: 0; top: 0;
+  height: calc(850 / 23120 * 100%);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  padding-top: calc(var(--su) * 40);
+  text-align: center; z-index: 2; pointer-events: none;
+  text-shadow: 0 2px calc(var(--su) * 30) rgba(0,0,0,.55);
+}
+.it-title__year {
+  font-family: "Courier Prime", "Courier New", monospace;
+  font-size: max(11px, calc(var(--su) * 54)); line-height: 1; letter-spacing: .06em;
+  opacity: .9;
+}
+.it-title__name {
+  font-family: "Libre Caslon Text", Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  font-size: max(30px, calc(var(--su) * 178)); line-height: 1.05; letter-spacing: -.005em;
+  margin-top: calc(var(--su) * 28);
+}
+.it-title__kind {
+  font-family: "Libre Caslon Text", Georgia, "Times New Roman", serif;
+  font-size: max(11px, calc(var(--su) * 34)); line-height: 1;
+  margin-top: calc(var(--su) * 34);
+  padding-top: calc(var(--su) * 30);
+  border-top: 1px solid rgba(255,255,255,.55);
+  min-width: calc(var(--su) * 260);
+}
 
 .it-top {
   position: absolute; top: 0; left: 0; right: 0; z-index: 5;
