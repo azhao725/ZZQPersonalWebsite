@@ -126,6 +126,8 @@ def build_project(folder: Path):
     videos = {f.stem for f in folder.iterdir() if f.suffix.lower() in VIDEO_EXT}
     posters = {v: f"{v}-poster.jpg" for v in videos if (folder / f"{v}-poster.jpg").exists()}
     exclude |= set(posters.values())
+    if info.get("headerImage"):
+        exclude.add(info["headerImage"])      # shown beside the description, not in the gallery
     media = []
     for p in sorted(folder.iterdir(), key=natural_key):
         ext = p.suffix.lower()

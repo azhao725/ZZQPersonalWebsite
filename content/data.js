@@ -196,7 +196,7 @@ window.SITE_DATA = {
       "medium": "Manga",
       "order": 5,
       "layout": "fullwidth",
-      "headerImage": "",
+      "headerImage": "SunnyRun-web.png",
       "descriptionZh": "受到松本大洋与莫比斯的影响，我于2024年画下了《阳阳》\n一个关于在废土世界中，一名在逃守墓童工与他的想象朋友阳阳一起寻找记忆中的粉色热海的故事。",
       "description": "Influenced by Taiyo Matsumoto and Moebius, I created Yangyang in 2024.\nThe project follows a fugitive child gravedigger in a post-apocalyptic wasteland, who travels alongside his imaginary companion, Yangyang, in search of a pink seaside town remembered only through fragments of memory.",
       "slug": "sunny",
