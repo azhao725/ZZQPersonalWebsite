@@ -13,10 +13,17 @@ window.SITE_DATA = {
       "year": 2026,
       "medium": "Unity game",
       "order": 1,
+      "page": "infant-tower.html",
       "slug": "infanttower",
       "folder": "InfantTower",
-      "cover": "works/InfantTower/2.png",
+      "cover": "works/InfantTower/1.png",
       "media": [
+        {
+          "type": "image",
+          "src": "works/InfantTower/1.png",
+          "w": 2288,
+          "h": 1293
+        },
         {
           "type": "image",
           "src": "works/InfantTower/2.png",
@@ -44,9 +51,51 @@ window.SITE_DATA = {
         },
         {
           "type": "image",
+          "src": "works/InfantTower/Screenshot 2026-11-20 at 23.14.58.png",
+          "w": 1666,
+          "h": 1372
+        },
+        {
+          "type": "image",
+          "src": "works/InfantTower/Screenshot 2026-11-20 at 23.15.49.png",
+          "w": 2610,
+          "h": 602
+        },
+        {
+          "type": "image",
+          "src": "works/InfantTower/Screenshot 2026-11-20 at 23.16.03.png",
+          "w": 2726,
+          "h": 680
+        },
+        {
+          "type": "image",
+          "src": "works/InfantTower/Screenshot 2026-11-20 at 23.16.33.png",
+          "w": 1586,
+          "h": 1450
+        },
+        {
+          "type": "image",
+          "src": "works/InfantTower/Screenshot 2026-11-20 at 23.17.05.png",
+          "w": 1860,
+          "h": 1446
+        },
+        {
+          "type": "image",
           "src": "works/InfantTower/still1.png",
           "w": 2343,
           "h": 1291
+        },
+        {
+          "type": "image",
+          "src": "works/InfantTower/still2.png",
+          "w": 1687,
+          "h": 883
+        },
+        {
+          "type": "image",
+          "src": "works/InfantTower/still.png",
+          "w": 2091,
+          "h": 1240
         },
         {
           "type": "image",

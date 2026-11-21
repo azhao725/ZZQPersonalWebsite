@@ -89,7 +89,7 @@ def video_duration(path: Path):
 
 def stamp_pages(version: str):
     """Add ?v=<version> to local css/js links so browsers fetch fresh copies after updates."""
-    for name in ("index.html", "project.html"):
+    for name in [p.name for p in ROOT.glob("*.html")]:
         page = ROOT / name
         if not page.exists():
             continue

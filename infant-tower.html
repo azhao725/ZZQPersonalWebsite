@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Infant Tower — Ziqi Zhao</title>
+  <meta name="description" content="Infant Tower (2026) — a Unity game about death, rebirth and escape from a Qing-dynasty baby tower. Concept, level design, environment and character art by Ziqi Zhao.">
+  <link rel="preload" href="assets/fonts/anton-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/source-serif-4-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/style.css?v=20261121002232">
+  <link rel="stylesheet" href="assets/css/infant-tower.css?v=20261121002232">
+</head>
+<body class="it">
+
+<!-- ============ HERO ============ -->
+<header class="it-hero">
+  <nav class="it-top">
+    <a href="index.html">← Ziqi Zhao</a>
+    <span>01 / 07</span>
+  </nav>
+
+  <figure class="it-hero__still">
+    <img src="content/works/InfantTower/page/hero.jpg" width="2288" height="1293"
+         alt="Infant Tower — top-down view into the tower, the player standing among corpses on the stairs" fetchpriority="high" data-zoom>
+  </figure>
+
+  <div class="it-hero__text">
+    <h1 class="it-title">Infant Tower</h1>
+    <p class="it-meta">2026 — Unity game</p>
+    <div class="it-actions">
+      <button class="it-btn it-btn--solid" type="button" data-video="-7InQu28lEM">
+        <span class="it-btn__icon it-btn__icon--play" aria-hidden="true"></span>Watch walkthrough
+      </button>
+      <a class="it-btn" href="https://drive.google.com/file/d/1kDHGl-aTWt6YwcMaVPWnOaf5hgVPfIjF/view?usp=drive_link"
+         target="_blank" rel="noopener">
+        <span class="it-btn__icon" aria-hidden="true">↓</span>Download game
+      </a>
+    </div>
+  </div>
+
+  <ol class="it-toc" aria-label="On this page">
+    <li><a href="#concept"><b>01</b> Conceptual Phase</a></li>
+    <li><a href="#art"><b>02</b> Art Process</a></li>
+  </ol>
+</header>
+
+<main>
+
+<!-- ============ 01 CONCEPTUAL PHASE ============ -->
+<section class="it-section" id="concept">
+  <header class="it-head reveal">
+    <span class="it-head__num">01</span>
+    <h2 class="it-head__title">Conceptual Phase</h2>
+    <p class="it-head__kicker">History · Rules · Pillars · Level</p>
+  </header>
+
+  <!-- Historical background -->
+  <article class="it-block it-history">
+    <div class="it-history__text reveal">
+      <p class="it-label">Historical Background</p>
+      <h3 class="it-h3">Infant Tower</h3>
+      <p class="it-lede">Across the abandoned fields of Fujian and Jiangxi once stood strange structures that few dared approach. Born from the wars, floods, locust plagues, and famines of the late Qing dynasty, they were known as Baby Towers.</p>
+      <p>During this period, local communities built these tomb-like enclosures, shaped like inverted birdcages, as places to abandon infants they could no longer afford to raise—newborn girls, disabled children, and other unwanted babies. Left within the towers, many were condemned to die unseen and forgotten.</p>
+      <p>In local folklore, Baby Towers functioned as more than sites of abandonment—they were spiritual prisons. Their gourd-shaped architecture symbolized containment, their narrow apertures restricted passage between worlds, and their sealed interiors embodied the belief that restless spirits could be trapped through darkness, enclosure, and ritual design.</p>
+      <p class="it-emph">In Infant Tower, these beliefs become the foundation of the game’s central antagonist: architecture itself. The tower is not merely a setting, but a machine built to prevent escape, rebirth, and transcendence.</p>
+    </div>
+    <div class="it-history__media reveal">
+      <figure class="it-fig it-fig--photo it-history__p1"><img src="content/works/InfantTower/page/hist-photo1.jpg" width="406" height="231" alt="Archival photograph of a baby tower in a field" loading="lazy" data-zoom></figure>
+      <figure class="it-fig it-fig--photo it-history__p2"><img src="content/works/InfantTower/page/hist-photo2.jpg" width="190" height="233" alt="Archival photograph of a tiered baby tower" loading="lazy" data-zoom></figure>
+      <figure class="it-fig it-fig--photo it-history__p3"><img src="content/works/InfantTower/page/hist-doc.jpg" width="164" height="117" alt="Handwritten historical document" loading="lazy" data-zoom></figure>
+      <figure class="it-fig it-fig--photo it-history__p4"><img src="content/works/InfantTower/page/hist-book.jpg" width="98" height="116" alt="Book cover: 孩儿塔" loading="lazy" data-zoom></figure>
+      <figcaption class="it-cap it-history__cap">Archival photographs and records of baby towers</figcaption>
+    </div>
+  </article>
+
+  <!-- Sisyphus -->
+  <article class="it-block it-sisyphus">
+    <div class="it-sisyphus__media reveal">
+      <figure class="it-fig"><img src="content/works/InfantTower/page/sisyphus.jpg" width="279" height="198" alt="Sisyphus pushing a boulder up a cliff" loading="lazy" data-zoom></figure>
+      <figure class="it-fig"><img src="content/works/InfantTower/page/camus.jpg" width="130" height="198" alt="Cover of The Myth of Sisyphus by Albert Camus" loading="lazy" data-zoom></figure>
+      <figcaption class="it-cap"><i>The Myth of Sisyphus</i>, Albert Camus</figcaption>
+    </div>
+    <div class="it-sisyphus__text reveal">
+      <h3 class="it-h3 it-h3--accent">Ritualistic Escape<br>Existential Struggle</h3>
+      <p>Develop a system of game rules inspired by the absurdist thought experiment in <i>The Myth of Sisyphus</i>: trapped within a tower and driven by an unwavering desire to escape, the infant climbs upward.</p>
+      <p class="it-emph">Each failure casts it back into the cycle of rebirth. Through repeated attempts across these cycles, it learns to use its own death as a tool.</p>
+    </div>
+  </article>
+
+  <!-- Design pillars -->
+  <article class="it-block it-pillars">
+    <figure class="it-pillars__img reveal">
+      <img src="content/works/InfantTower/page/octagon.jpg" width="640" height="1068" alt="Top-down render of the octagonal tower interior" loading="lazy" data-zoom>
+    </figure>
+    <div class="it-pillars__list">
+      <p class="it-label reveal">Design Pillars</p>
+      <ol>
+        <li class="reveal"><span class="it-pillar__n">01</span><div><h4>Architecture as Antagonist</h4><p>The tower itself functions as the primary enemy.</p></div></li>
+        <li class="reveal"><span class="it-pillar__n">02</span><div><h4>Death Creates Progress</h4><p>Death separated from failure, transformed into resource.</p></div></li>
+        <li class="reveal"><span class="it-pillar__n">03</span><div><h4>Ritualized Ascension</h4><p>Struggling experience of a spiritual journey upward.</p></div></li>
+        <li class="reveal"><span class="it-pillar__n">04</span><div><h4>Fragile Vulnerable Player</h4></div></li>
+      </ol>
+    </div>
+  </article>
+
+  <!-- Death / rebirth mechanism -->
+  <article class="it-block it-mech">
+    <div class="it-mech__intro reveal">
+      <p class="it-label">Core Mechanic</p>
+      <h3 class="it-h3 it-h3--accent">Death / Rebirth Mechanism</h3>
+      <p>This level centers on death and rebirth as its core mechanics.</p>
+      <p>The player character is fragile, leaving a corpse at the site of each death. After respawning, the player must use the corpses accumulated throughout the level to reach the exit.</p>
+
+      <div class="it-flow" role="img" aria-label="Flowchart: bitten by fly, fall from height, burnt by fire, or burnt by talisman lead to death; death leaves a corpse that persists after respawning; the player enters a reincarnation liminal space, crosses through a portal and is reborn, then uses accumulated corpses for progression.">
+        <div class="it-flow__causes">
+          <span>Bitten by fly</span><span>Fall from height</span><span>Burnt by fire</span><span>Burnt by talisman</span>
+        </div>
+        <div class="it-flow__merge" aria-hidden="true"></div>
+        <ol class="it-flow__steps">
+          <li class="is-death">Death</li>
+          <li>Leaves a corpse at the site of death that persists after respawning</li>
+          <li>Enters a reincarnation liminal space</li>
+          <li>Crosses through the portal and is reborn</li>
+          <li>Uses accumulated corpses for progression</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="it-mech__map reveal">
+      <figure class="it-fig it-fig--diagram">
+        <img src="content/works/InfantTower/page/level-diagram.jpg" width="553" height="1140" alt="Cross-section of the tower level: door, respawn points 1 and 2, enemy flies, talisman barrier, and the level end point at the top" loading="lazy" data-zoom>
+      </figure>
+      <div class="it-notes">
+        <div class="it-note">
+          <img src="content/works/InfantTower/page/rebirth-space.jpg" width="228" height="235" alt="Two views of the rebirth preparation area" loading="lazy" data-zoom>
+          <div>
+            <h4 class="it-note__title it-note__title--blue">Rebirth Preparation Area</h4>
+            <p>A space the player is transported to after each death. Here, the player can view scenes of their past deaths and choose a respawn point.</p>
+            <p>Respawn Point 1, at the base of the tower, is available from the start. Respawn Point 2 unlocks upon reaching the talisman barrier on the second floor.</p>
+          </div>
+        </div>
+        <div class="it-note">
+          <img src="content/works/InfantTower/page/fly-enemy.jpg" width="720" height="680" alt="The enemy fly over a mural" loading="lazy" data-zoom>
+          <div>
+            <h4 class="it-note__title it-note__title--red">Enemy: Fly</h4>
+            <p>The fly is the main enemy. Contact with it instantly kills the player. While idle, it repeatedly flies to random points within a designated area. When the player comes within its detection range, it moves rapidly toward them.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- Key moments -->
+  <article class="it-block it-moments">
+    <p class="it-label reveal">Three moments, bottom to top</p>
+    <div class="it-moments__grid">
+      <div class="it-moment reveal">
+        <figure class="it-fig"><img src="content/works/InfantTower/page/talisman-group.jpg" width="492" height="202" alt="Corpse burning in a talisman-covered window; the corridor doorway" loading="lazy" data-zoom></figure>
+        <span class="it-moment__n">I</span>
+        <h4>Each talisman burns only once</h4>
+        <p>Upon spawning, the player first sees a corpse burning in a window covered with talismans, hinting at their danger. To pass through the doorway at the corridor entrance, the player must first push a nearby corpse through it, triggering the talismans so they can cross safely.</p>
+      </div>
+      <div class="it-moment reveal">
+        <div class="it-moment__trio">
+          <figure class="it-fig it-moment__big"><img src="content/works/InfantTower/page/floor2-wall.jpg" width="1990" height="1229" alt="The second-floor talisman barrier along the wall" loading="lazy" data-zoom></figure>
+          <figure class="it-fig"><img src="content/works/InfantTower/page/floor2-talisman.jpg" width="164" height="104" alt="The player at the talisman barrier" loading="lazy" data-zoom></figure>
+          <figure class="it-fig"><img src="content/works/InfantTower/page/floor2-burn.jpg" width="999" height="1265" alt="The player burning to death at the barrier" loading="lazy" data-zoom></figure>
+        </div>
+        <span class="it-moment__n">II</span>
+        <h4>A deliberate death</h4>
+        <p>On the second floor, the player encounters another talisman barrier, with no corpses nearby to use. The player must deliberately burn themselves to death, respawn at the stairs, and use the corpse left behind to cross the barrier.</p>
+      </div>
+      <div class="it-moment reveal">
+        <figure class="it-fig it-fig--win"><img src="content/works/InfantTower/page/ingame-ascension.jpg" width="2200" height="1212" alt="A beam of light shining down on the player at the top of the tower" loading="lazy" data-zoom></figure>
+        <span class="it-moment__n">III</span>
+        <h4>Escape from the inferno</h4>
+        <p>Entering the top triggers the winning condition. A light beam shines down on the player, and as it gets brighter and brighter, the sound of bells surrounds them, symbolizing a successful escape from the inferno.</p>
+      </div>
+    </div>
+  </article>
+
+  <!-- Level design / pacing -->
+  <article class="it-block it-pacing">
+    <div class="it-pacing__text reveal">
+      <p class="it-label">Level Design</p>
+      <h3 class="it-h3">Fast, then slow</h3>
+      <p>The level’s pacing shifts from fast to slow. The player spawns at the base of the tower, accompanied by intense background music and the loud sounds of wind and fire. Three flies crowd the space, forcing the player to dodge frequently while figuring out how to pass through the talisman-sealed entrance. The player will likely die once or twice here, becoming familiar with the death-and-rebirth mechanic early on.</p>
+      <p>The pace slows once the player reaches the stairs. The overall sequence is as follows:</p>
+    </div>
+    <div class="it-chart reveal" role="img" aria-label="Pacing chart: intensity over time. Spawns (high), find entrance to stairs (peak), avoids flies on level 1, actively dies at level 2 talisman, is reborn and passes through talisman, platformer section (lowest), enters peak.">
+      <svg viewBox="0 0 1000 330" preserveAspectRatio="xMidYMid meet">
+        <defs>
+          <marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0,0 L10,5 L0,10 z" fill="currentColor"/>
+          </marker>
+          <linearGradient id="fade" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0" stop-color="var(--it-accent)" stop-opacity=".35"/>
+            <stop offset="1" stop-color="var(--it-accent)" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+        <!-- step labels -->
+        <g class="it-chart__steps">
+          <text x="40"  y="40">Spawns</text>
+          <text x="185" y="30">Find entrance</text><text x="185" y="48">to stairs</text>
+          <text x="330" y="40">Avoids flies on L1</text>
+          <text x="505" y="30">Actively dies at</text><text x="505" y="48">L2 talisman</text>
+          <text x="660" y="30">Reborn, passes</text><text x="660" y="48">through talisman</text>
+          <text x="800" y="40">Platformer</text>
+          <text x="940" y="40">Enters peak</text>
+        </g>
+        <!-- axes -->
+        <line x1="20" y1="300" x2="985" y2="300" class="it-chart__axis" marker-end="url(#ar)"/>
+        <line x1="20" y1="300" x2="20" y2="80" class="it-chart__axis" marker-end="url(#ar)"/>
+        <text x="30" y="92" class="it-chart__axislabel">Intensity 强度</text>
+        <text x="985" y="322" class="it-chart__axislabel" text-anchor="end">Time 时间</text>
+        <!-- intensity curve -->
+        <path class="it-chart__area" d="M40,170 L185,120 L240,250 L330,170 L410,260 L505,170 L660,210 L745,290 L800,280 L940,285 L940,300 L40,300 Z" fill="url(#fade)"/>
+        <polyline class="it-chart__line" points="40,170 185,120 240,250 330,170 410,260 505,170 660,210 745,290 800,280 940,285"/>
+        <g class="it-chart__dots">
+          <circle cx="40" cy="170" r="6"/><circle cx="185" cy="120" r="6"/><circle cx="240" cy="250" r="6"/>
+          <circle cx="330" cy="170" r="6"/><circle cx="410" cy="260" r="6"/><circle cx="505" cy="170" r="6"/>
+          <circle cx="660" cy="210" r="6"/><circle cx="745" cy="290" r="6"/><circle cx="800" cy="280" r="6"/>
+          <circle cx="940" cy="285" r="6"/>
+        </g>
+      </svg>
+    </div>
+  </article>
+</section>
+
+<!-- ============ 02 ART PROCESS ============ -->
+<section class="it-section" id="art">
+  <header class="it-head reveal">
+    <span class="it-head__num">02</span>
+    <h2 class="it-head__title">Art Process</h2>
+    <nav class="it-subnav" aria-label="Art process">
+      <a href="#environment">Environment</a><span aria-hidden="true">→</span>
+      <a href="#character">Character</a><span aria-hidden="true">→</span>
+      <a href="#combined">Combined</a>
+    </nav>
+  </header>
+
+  <!-- ---------- Environment ---------- -->
+  <div class="it-chapter" id="environment">
+    <p class="it-chapter__label reveal"><b>02.1</b> Environment</p>
+
+    <article class="it-block it-env">
+      <figure class="it-env__tower reveal">
+        <img src="content/works/InfantTower/page/env-tower.jpg" width="667" height="1062" alt="Cutaway render of the full tower: the mural-lined base, the stairs and the open top" loading="lazy" data-zoom>
+      </figure>
+      <div class="it-env__text reveal">
+        <h3 class="it-h3">Environment Design</h3>
+        <p>The tower resembles an octagonal cage. Vivid murals line its lower walls, forming a continuous ring. They depict countless infants cast into a fiery inferno by a pair of enormous hands looming in the sky. The infants suffer venomous snakes and insects, flames, and the torments inflicted by demons.</p>
+        <p>Among them, countless small figures resembling the player character wander, lost in hell—hinting at the protagonist’s fate of endless death and rebirth.</p>
+        <figure class="it-fig it-env__passes"><img src="content/works/InfantTower/page/env-passes.jpg" width="583" height="407" alt="Ambient occlusion and normal-map passes of the tower" loading="lazy" data-zoom></figure>
+      </div>
+    </article>
+
+    <!-- Murals -->
+    <article class="it-murals">
+      <div class="it-murals__inner">
+        <header class="it-murals__head reveal">
+          <h3 class="it-h3">Murals</h3>
+          <p class="it-meta">Watercolor on paper</p>
+          <p class="it-lede">Together they form a single panoramic loop, and their imagery foreshadows the baby’s endless reincarnation within the tower.</p>
+        </header>
+
+        <div class="it-murals__refs reveal">
+          <figure class="it-fig"><img src="content/works/InfantTower/page/mural-refs.jpg" width="463" height="127" alt="Ancient Chinese paintings of devils and snakes" loading="lazy" data-zoom>
+            <figcaption class="it-cap">Reference: ancient Chinese paintings of devils and snakes</figcaption></figure>
+          <figure class="it-fig"><img src="content/works/InfantTower/page/mural-photo.jpg" width="730" height="336" alt="The four watercolor murals laid side by side" loading="lazy" data-zoom>
+            <figcaption class="it-cap">The four paintings</figcaption></figure>
+        </div>
+
+        <div class="it-murals__grid">
+          <figure class="it-fig reveal"><img src="content/works/InfantTower/page/mural-1.jpg" width="795" height="395" alt="Mural: a blue demon with a club among falling babies and flames" loading="lazy" data-zoom></figure>
+          <figure class="it-fig reveal"><img src="content/works/InfantTower/page/mural-2.jpg" width="742" height="395" alt="Mural: rocky cliffs with babies in a pool of fire" loading="lazy" data-zoom></figure>
+          <figure class="it-fig reveal"><img src="content/works/InfantTower/page/mural-3.jpg" width="787" height="396" alt="Mural: giant black snakes coiling through flames" loading="lazy" data-zoom></figure>
+          <figure class="it-fig reveal"><img src="content/works/InfantTower/page/mural-4.jpg" width="749" height="396" alt="Mural: teal rocks, clouds and red threads trailing behind babies" loading="lazy" data-zoom></figure>
+        </div>
+
+        <div class="it-murals__story reveal">
+          <h4>Formal Elements and Storytelling</h4>
+          <p>Hands reach down from the sky and cast babies into a burning hell. Surrounded by an endless sea of fire, the babies are hunted by demons, snakes, and insects as they search for a way out of the labyrinth. Through countless cycles of death and rebirth, each baby’s red dudou (belly band) unravels into a trail behind them. These trails mingle with the countless red threads of past and future lives, until they gather back into the very flames that swallow the falling babies in the first painting, closing the loop.</p>
+        </div>
+      </div>
+
+      <!-- the loop, literally -->
+      <div class="it-loop" aria-label="The four murals joined as one continuous, looping panorama">
+        <div class="it-loop__track">
+          <img src="content/works/InfantTower/page/mural-4.jpg" width="749" height="396" alt="" loading="lazy"><img src="content/works/InfantTower/page/mural-3.jpg" width="787" height="396" alt="" loading="lazy"><img src="content/works/InfantTower/page/mural-1.jpg" width="795" height="395" alt="" loading="lazy"><img src="content/works/InfantTower/page/mural-2.jpg" width="742" height="395" alt="" loading="lazy"><img src="content/works/InfantTower/page/mural-4.jpg" width="749" height="396" alt="" loading="lazy"><img src="content/works/InfantTower/page/mural-3.jpg" width="787" height="396" alt="" loading="lazy"><img src="content/works/InfantTower/page/mural-1.jpg" width="795" height="395" alt="" loading="lazy"><img src="content/works/InfantTower/page/mural-2.jpg" width="742" height="395" alt="" loading="lazy">
+        </div>
+        <p class="it-cap it-loop__cap">The panorama loops — hover to pause</p>
+      </div>
+    </article>
+
+    <!-- Texture maps -->
+    <article class="it-block it-tex">
+      <header class="reveal">
+        <h3 class="it-h3">Texture Maps</h3>
+        <p class="it-meta">The murals become the tower walls</p>
+      </header>
+      <div class="it-tex__atlases">
+        <figure class="it-fig reveal"><img src="content/works/InfantTower/page/atlas-1.jpg" width="1012" height="1023" alt="UV texture atlas of the tower base: stone panels and the four murals" loading="lazy" data-zoom></figure>
+        <figure class="it-fig reveal"><img src="content/works/InfantTower/page/atlas-2.jpg" width="1368" height="542" alt="UV texture atlas of the upper tower: painted beams and patterned columns" loading="lazy" data-zoom></figure>
+      </div>
+      <figure class="it-fig it-tex__renders reveal"><img src="content/works/InfantTower/page/tex-renders.jpg" width="1860" height="477" alt="Three top-down views of the textured tower floor" loading="lazy" data-zoom></figure>
+      <figure class="it-fig it-tex__unity reveal"><img src="content/works/InfantTower/page/tex-unity.jpg" width="1121" height="888" alt="The tower base assembled in the Unity editor" loading="lazy" data-zoom>
+        <figcaption class="it-cap">Assembled in Unity</figcaption></figure>
+    </article>
+  </div>
+
+  <!-- ---------- Character ---------- -->
+  <div class="it-chapter" id="character">
+    <p class="it-chapter__label reveal"><b>02.2</b> Character</p>
+
+    <article class="it-charhero reveal">
+      <img src="content/works/InfantTower/page/char-hero.jpg" width="1687" height="883" alt="The tiny player character standing on a stone platform beneath the monster" loading="lazy" data-zoom>
+      <div class="it-charhero__text">
+        <h3 class="it-h3">Character Design</h3>
+        <p>The protagonist’s design draws inspiration from Qing-dynasty porcelain dolls wearing tiger-head hats.</p>
+        <p>The fly is a semi-humanoid insect monster with six limbs, two wings, and a single eye.</p>
+      </div>
+    </article>
+
+    <article class="it-block it-char">
+      <h4 class="it-h4 reveal">The protagonist</h4>
+      <div class="it-row reveal">
+        <figure class="it-fig" style="--ar:1.772"><img src="content/works/InfantTower/page/char-sheet.jpg" width="1490" height="841" alt="Character design sheet: reference photos of porcelain dolls and tiger-head hats, and many costume variations of the baby" loading="lazy" data-zoom></figure>
+        <figure class="it-fig" style="--ar:0.753"><img src="content/works/InfantTower/page/doll-photo.jpg" width="510" height="677" alt="The baby character with an orange tiger hat, glowing in the dark" loading="lazy" data-zoom></figure>
+      </div>
+      <p class="it-cap">References and design iterations</p>
+      <figure class="it-fig it-char__strip reveal"><img src="content/works/InfantTower/page/player-models.jpg" width="2610" height="602" alt="The player model in-game and in Blender: body, collar and tiger hat" loading="lazy" data-zoom>
+        <figcaption class="it-cap">In-game and in Blender</figcaption></figure>
+
+      <h4 class="it-h4 reveal">The fly</h4>
+      <div class="it-row reveal">
+        <figure class="it-fig" style="--ar:4.009"><img src="content/works/InfantTower/page/fly-models.jpg" width="2726" height="680" alt="The fly over a mural in-game, its wireframe and its rig" loading="lazy" data-zoom></figure>
+        <figure class="it-fig it-char__turn" style="--ar:1.048">
+          <video src="content/works/InfantTower/page/fly-turntable.mp4" poster="content/works/InfantTower/page/fly-turntable-poster.jpg"
+                 width="824" height="786" muted loop autoplay playsinline preload="metadata" aria-label="The fly, turning"></video>
+        </figure>
+      </div>
+      <p class="it-cap">In-game, wireframe, rig and turntable</p>
+
+      <h4 class="it-h4 reveal">The monster</h4>
+      <figure class="it-fig it-char__monster reveal"><img src="content/works/InfantTower/page/monster.jpg" width="1415" height="810" alt="Monster: line sketches, grey sculpts and textured renders with its rig" loading="lazy" data-zoom>
+        <figcaption class="it-cap">Sketches, sculpt, texture and rig</figcaption></figure>
+    </article>
+  </div>
+
+  <!-- ---------- Combined ---------- -->
+  <div class="it-chapter it-combined" id="combined">
+    <p class="it-chapter__label reveal"><b>02.3</b> Combined — in game</p>
+    <div class="it-combined__grid">
+      <figure class="it-fig it-combined__a reveal"><img src="content/works/InfantTower/page/ingame-monster-below.jpg" width="2000" height="1186" alt="Looking up at the monster hanging in the painted tower ceiling" loading="lazy" data-zoom></figure>
+      <figure class="it-fig it-combined__b reveal"><img src="content/works/InfantTower/page/floor2-burn.jpg" width="999" height="1265" alt="Blue fire bursting from the talisman barrier" loading="lazy" data-zoom></figure>
+      <figure class="it-fig it-combined__c reveal"><img src="content/works/InfantTower/page/ingame-ascension.jpg" width="2200" height="1212" alt="The monster lit by the beam of light above the player" loading="lazy" data-zoom></figure>
+    </div>
+
+    <div class="it-end reveal">
+      <h3 class="it-title it-title--sm">Infant Tower</h3>
+      <div class="it-actions">
+        <button class="it-btn it-btn--solid" type="button" data-video="-7InQu28lEM">
+          <span class="it-btn__icon it-btn__icon--play" aria-hidden="true"></span>Watch walkthrough
+        </button>
+        <a class="it-btn" href="https://drive.google.com/file/d/1kDHGl-aTWt6YwcMaVPWnOaf5hgVPfIjF/view?usp=drive_link" target="_blank" rel="noopener">
+          <span class="it-btn__icon" aria-hidden="true">↓</span>Download game
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<a class="project__next it-next" href="project.html?p=corridor"><small>Next project</small>Corridor</a>
+</main>
+
+<!-- video modal -->
+<div class="it-modal" id="videoModal" hidden>
+  <div class="it-modal__box">
+    <div class="it-modal__bar">
+      <a id="ytLink" href="https://youtu.be/-7InQu28lEM" target="_blank" rel="noopener">Open on YouTube ↗</a>
+      <button type="button" class="it-modal__close" aria-label="Close video">Close ✕</button>
+    </div>
+    <div class="it-modal__frame"></div>
+  </div>
+</div>
+
+<script src="content/data.js?v=20261121002232"></script>
+<script src="assets/js/infant-tower.js?v=20261121002232"></script>
+</body>
+</html>

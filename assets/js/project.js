@@ -10,6 +10,7 @@
   const i = projects.findIndex((p) => p.slug === slug);
   if (i < 0) { location.replace("index.html"); return; }
   const p = projects[i];
+  if (p.page) { location.replace(p.page); return; }   // projects with their own hand-built page
 
   document.title = `${p.title} — ${site.name}`;
   $("back").textContent = "← " + site.name;
@@ -255,7 +256,7 @@
 
   const n = projects[(i + 1) % projects.length];
   const next = $("next");
-  next.href = "project.html?p=" + encodeURIComponent(n.slug);
+  next.href = n.page || "project.html?p=" + encodeURIComponent(n.slug);
   next.innerHTML = "<small>Next project</small>";
   next.appendChild(document.createTextNode(n.title));
 })();

@@ -30,7 +30,7 @@
     const meta = [p.year, p.medium].filter(Boolean).map(esc);
     return `
       <li class="reveal" style="--i:${i + 2}">
-        <a class="work" href="project.html?p=${encodeURIComponent(p.slug)}" data-i="${i}">
+        <a class="work" href="${p.page ? esc(p.page) : "project.html?p=" + encodeURIComponent(p.slug)}" data-i="${i}">
           <span class="work__title">${esc(p.title)}</span>
           <span class="work__meta">
             <span class="work__num">${pad(i + 1)}</span>

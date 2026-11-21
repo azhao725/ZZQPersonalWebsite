@@ -49,6 +49,14 @@ originals/              ← full-size masters; NOT uploaded (git-ignored)
 Files appear on the project page in name order — prefix with numbers to control it:
 `01-overview.jpg`, `02-detail.jpg`, `03-demo.mp4`.
 
+## Hand-built pages
+
+Some projects have their own page instead of the automatic one. Set `"page"` in the project's
+`info.json` (e.g. `"page": "infant-tower.html"`) and the home screen links there.
+
+- **Infant Tower** → `infant-tower.html` (text is written directly in that file),
+  styles in `assets/css/infant-tower.css`, images in `content/works/InfantTower/page/`.
+
 ## File guidelines
 
 - **Images:** JPG (or PNG for flat graphics), long edge ~2400 px, under ~1–2 MB, sRGB.
