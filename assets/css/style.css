@@ -128,6 +128,10 @@ a { color: inherit; text-decoration: none; }
   opacity: 1;
   transform: skewX(-9deg) translateX(.12em);
 }
+@media (hover: hover) and (pointer: fine) {
+  .js-lean .work { transition: opacity .35s ease; }          /* transform is animated by the mouse */
+  .js-lean .stack__list .work:hover { transform: none; }
+}
 .work:hover .work__title,
 .work:focus-visible .work__title { color: var(--fg); }
 

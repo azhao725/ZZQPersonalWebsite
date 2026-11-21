@@ -58,6 +58,47 @@
   });
   list.addEventListener("mouseleave", () => { readout.innerHTML = idle; });
 
+  // --- hover: the title leans with the mouse — direction and speed of movement set the tilt,
+  //     a gentle lean remains while hovering, and it springs upright on leave ---
+  if (matchMedia("(hover: hover) and (pointer: fine)").matches &&
+      !matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    document.body.classList.add("js-lean");
+    const BASE = -6;                 // resting lean while hovered (deg; negative = top leans right)
+    const state = new Map();         // el -> { skew, shift, target, hovered }
+    let vx = 0, lastX = null, loop = false;
+
+    const tick = () => {
+      vx *= 0.86;                                            // mouse speed fades when it stops
+      let active = false;
+      state.forEach((s, el) => {
+        const want = s.hovered ? BASE - Math.max(-14, Math.min(14, vx * 0.55)) : 0;
+        const wantShift = s.hovered ? 0.12 + Math.max(-0.12, Math.min(0.12, vx * 0.006)) : 0;
+        s.skew += (want - s.skew) * 0.14;
+        s.shift += (wantShift - s.shift) * 0.14;
+        el.style.transform = `translateX(${s.shift.toFixed(3)}em) skewX(${s.skew.toFixed(2)}deg)`;
+        if (s.hovered || Math.abs(s.skew) > 0.05 || Math.abs(s.shift) > 0.002) active = true;
+        else { el.style.transform = ""; state.delete(el); }
+      });
+      if (active) requestAnimationFrame(tick); else loop = false;
+    };
+    const run = () => { if (!loop) { loop = true; requestAnimationFrame(tick); } };
+
+    list.querySelectorAll(".work").forEach((el) => {
+      el.addEventListener("mouseenter", (e) => {
+        const s = state.get(el) || { skew: 0, shift: 0 };
+        s.hovered = true; state.set(el, s); lastX = e.clientX; run();
+      });
+      el.addEventListener("mouseleave", () => {
+        const s = state.get(el); if (s) s.hovered = false; run();
+      });
+    });
+    list.addEventListener("mousemove", (e) => {
+      if (lastX !== null) vx = vx * 0.6 + (e.clientX - lastX) * 0.4;   // smoothed horizontal speed
+      lastX = e.clientX; run();
+    });
+    list.addEventListener("mouseleave", () => { lastX = null; });
+  }
+
   // --- scroll motion: while scrolling, lines trail the scroll a little (lower lines more,
   //     so the stack stretches like a spring) and lean with the speed; at rest nothing changes ---
   if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
