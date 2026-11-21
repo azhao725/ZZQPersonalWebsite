@@ -54,8 +54,10 @@ Files appear on the project page in name order — prefix with numbers to contro
 Some projects have their own page instead of the automatic one. Set `"page"` in the project's
 `info.json` (e.g. `"page": "infant-tower.html"`) and the home screen links there.
 
-- **Infant Tower** → `infant-tower.html` (text is written directly in that file),
-  styles in `assets/css/infant-tower.css`, images in `content/works/InfantTower/page/`.
+- **Infant Tower** → `infant-tower.html` shows the layout sheet (BabyTower.png) as-is, cut into
+  8 slices in `content/works/InfantTower/sheet/`. The walkthrough / download links and the fly
+  turntable video sit on top, positioned in the sheet's own pixels (`--x`, `--y`, `--w`, `--h`
+  on a 1920 × 23120 canvas). To update the sheet, export a new PNG at the same size and re-slice it.
 
 ## File guidelines
 
