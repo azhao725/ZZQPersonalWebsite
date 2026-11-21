@@ -107,36 +107,4 @@
       { rootMargin: "0px 0px -30% 0px" }).observe(about);
   }
 
-  // --- scroll motion: while scrolling, lines trail the scroll a little (lower lines more,
-  //     so the stack stretches like a spring) and lean with the speed; at rest nothing changes ---
-  if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    const lines = [document.getElementById("name"), document.querySelector(".stack__divider"), ...list.children];
-    // the load-in animation holds its own transform; release it once it has played
-    lines.forEach((el) => el.addEventListener("animationend", () => el.classList.remove("reveal"), { once: true }));
-
-    let current = window.scrollY, running = false;
-    const frame = () => {
-      const target = window.scrollY;
-      current += (target - current) * 0.085;
-      const diff = target - current;                       // how far the motion is behind the scroll
-      if (Math.abs(diff) < 0.15) {
-        current = target;
-        lines.forEach((el) => { el.style.transform = ""; });
-        running = false;
-        return;
-      }
-      const lean = Math.max(-8, Math.min(8, diff * 0.06));
-      lines.forEach((el, i) => {
-        if (el.classList.contains("reveal")) return;       // still playing its load-in
-        el.style.transform = `translate3d(0, ${(diff * (0.2 + i * 0.07)).toFixed(2)}px, 0) skewY(${lean.toFixed(2)}deg)`;
-      });
-      requestAnimationFrame(frame);
-    };
-    window.addEventListener("scroll", () => {
-      if (!running) { running = true; requestAnimationFrame(frame); }
-    }, { passive: true });
-  }
-  list.addEventListener("focusout", (e) => {
-    if (!list.contains(e.relatedTarget)) readout.innerHTML = idle;
-  });
 })();

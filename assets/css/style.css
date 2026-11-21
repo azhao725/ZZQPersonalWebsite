@@ -51,7 +51,7 @@ a { color: inherit; text-decoration: none; }
 .stack {
   position: relative;
   width: min(100%, 64vw);
-  padding: var(--pad) var(--pad) 28vh;
+  padding: var(--pad) var(--pad) 85vh;
   z-index: 2;
 }
 
@@ -83,7 +83,6 @@ a { color: inherit; text-decoration: none; }
 }
 
 .stack__list { list-style: none; }
-.stack__list > li, .stack__name, .stack__divider { transform-origin: left center; will-change: transform; }
 
 .work {
   display: inline-flex;
@@ -171,7 +170,7 @@ a { color: inherit; text-decoration: none; }
 
 /* ---------- small screens ---------- */
 @media (max-width: 760px) {
-  .stack { width: 100%; padding-bottom: 40vh; }
+  .stack { width: 100%; padding-bottom: 75vh; }
   .work__meta { font-size: 9px; }
   .readout { display: none; }
   .bg-shade { background: rgba(0,0,0,.35); }
