@@ -5,6 +5,7 @@ Usage:  python3 tools/build_index.py
 No extra installs needed. Run it after adding, editing or removing a project
 or any of its images/videos.
 """
+import hashlib
 import json
 import re
 import shutil
@@ -87,15 +88,25 @@ def video_duration(path: Path):
         return None
 
 
+def file_hash(path: Path) -> str:
+    """Short fingerprint of a file's contents — changes whenever the file changes."""
+    return hashlib.md5(path.read_bytes()).hexdigest()[:10]
+
+
 def stamp_pages(version: str):
-    """Add ?v=<version> to local css/js links so browsers fetch fresh copies after updates."""
-    for name in [p.name for p in ROOT.glob("*.html")]:
-        page = ROOT / name
-        if not page.exists():
-            continue
+    """Add ?v=<fingerprint> to every local file a page loads (css, js, data, images, video),
+    so browsers fetch a fresh copy whenever that file changes — and keep their copy otherwise."""
+    ref = re.compile(r'((?:src|href|poster)=")((?:assets|content)/[^"?#]+)(?:\?v=[^"]*)?(")')
+    for page in ROOT.glob("*.html"):
         html = page.read_text(encoding="utf-8")
-        new = re.sub(r'((?:src|href)="(?:assets/(?:css|js)/[^"?]+|content/data\.js))(?:\?v=[^"]*)?"',
-                     rf'\1?v={version}"', html)
+
+        def stamp(m):
+            target = ROOT / m.group(2)
+            if not target.is_file():
+                return m.group(0)
+            return f"{m.group(1)}{m.group(2)}?v={file_hash(target)}{m.group(3)}"
+
+        new = ref.sub(stamp, html)
         if new != html:
             page.write_text(new, encoding="utf-8")
 
@@ -148,7 +159,7 @@ def build_project(folder: Path):
                 warnings.append(f"{where}/{p.name}: {size/1e6:.0f} MB video — compress it")
         else:
             continue
-        item = {"type": kind, "src": p.relative_to(CONTENT).as_posix()}
+        item = {"type": kind, "src": p.relative_to(CONTENT).as_posix(), "v": file_hash(p)}
         dims = image_size(p) if kind == "image" else video_size(p)
         if dims:
             item["w"], item["h"] = dims

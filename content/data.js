@@ -21,30 +21,35 @@ window.SITE_DATA = {
         {
           "type": "image",
           "src": "works/InfantTower/1.png",
+          "v": "04ff02f984",
           "w": 2288,
           "h": 1293
         },
         {
           "type": "image",
           "src": "works/InfantTower/2.png",
+          "v": "06c5017eb5",
           "w": 2480,
           "h": 1450
         },
         {
           "type": "image",
           "src": "works/InfantTower/3.png",
+          "v": "af8389d6e4",
           "w": 2402,
           "h": 1418
         },
         {
           "type": "image",
           "src": "works/InfantTower/fireburn.png",
+          "v": "ca5a968cf5",
           "w": 999,
           "h": 1265
         },
         {
           "type": "video",
           "src": "works/InfantTower/Fly.mp4",
+          "v": "9cc42c2f29",
           "w": 824,
           "h": 786,
           "d": 20
@@ -52,54 +57,63 @@ window.SITE_DATA = {
         {
           "type": "image",
           "src": "works/InfantTower/Screenshot 2026-11-20 at 23.14.58.png",
+          "v": "8212f9b10c",
           "w": 1666,
           "h": 1372
         },
         {
           "type": "image",
           "src": "works/InfantTower/Screenshot 2026-11-20 at 23.15.49.png",
+          "v": "2de15aaf58",
           "w": 2610,
           "h": 602
         },
         {
           "type": "image",
           "src": "works/InfantTower/Screenshot 2026-11-20 at 23.16.03.png",
+          "v": "6cd7c7eb4f",
           "w": 2726,
           "h": 680
         },
         {
           "type": "image",
           "src": "works/InfantTower/Screenshot 2026-11-20 at 23.16.33.png",
+          "v": "20e558ccfd",
           "w": 1586,
           "h": 1450
         },
         {
           "type": "image",
           "src": "works/InfantTower/Screenshot 2026-11-20 at 23.17.05.png",
+          "v": "9a0c68f7ea",
           "w": 1860,
           "h": 1446
         },
         {
           "type": "image",
           "src": "works/InfantTower/still1.png",
+          "v": "96e76af4fe",
           "w": 2343,
           "h": 1291
         },
         {
           "type": "image",
           "src": "works/InfantTower/still2.png",
+          "v": "fe4b64d3f9",
           "w": 1687,
           "h": 883
         },
         {
           "type": "image",
           "src": "works/InfantTower/still.png",
+          "v": "9726cdeb60",
           "w": 2091,
           "h": 1240
         },
         {
           "type": "image",
           "src": "works/InfantTower/屏幕截图 2026-05-22 002041.png",
+          "v": "9fe7a9bc6e",
           "w": 1990,
           "h": 1229
         }
@@ -117,6 +131,7 @@ window.SITE_DATA = {
         {
           "type": "video",
           "src": "works/Corridor/demo1.mp4",
+          "v": "7a3e37fc82",
           "w": 1920,
           "h": 1440,
           "d": 18
@@ -124,6 +139,7 @@ window.SITE_DATA = {
         {
           "type": "video",
           "src": "works/Corridor/home-video.mp4",
+          "v": "a9dc2e7366",
           "w": 1920,
           "h": 1080,
           "d": 16
@@ -131,12 +147,14 @@ window.SITE_DATA = {
         {
           "type": "image",
           "src": "works/Corridor/setup1.JPG",
+          "v": "a510dc4b2d",
           "w": 6000,
           "h": 4000
         },
         {
           "type": "video",
           "src": "works/Corridor/setup-demo.mp4",
+          "v": "eb85c99327",
           "w": 1920,
           "h": 1080,
           "d": 26
@@ -144,6 +162,7 @@ window.SITE_DATA = {
         {
           "type": "image",
           "src": "works/Corridor/setupscreen.JPG",
+          "v": "cca11c9718",
           "w": 6000,
           "h": 4000
         }
@@ -162,6 +181,7 @@ window.SITE_DATA = {
         {
           "type": "video",
           "src": "works/Chair/Chair.mp4",
+          "v": "5222c51ed1",
           "w": 1920,
           "h": 1044,
           "poster": "works/Chair/Chair-poster.jpg",
@@ -182,6 +202,7 @@ window.SITE_DATA = {
         {
           "type": "video",
           "src": "works/Church/final-walkthrough.mp4",
+          "v": "df507643e8",
           "w": 1920,
           "h": 1086,
           "poster": "works/Church/final-walkthrough-poster.jpg",
@@ -206,24 +227,28 @@ window.SITE_DATA = {
         {
           "type": "image",
           "src": "works/Sunny/Yangyang1.jpg",
+          "v": "061c193eed",
           "w": 1179,
           "h": 1556
         },
         {
           "type": "image",
           "src": "works/Sunny/Yangyang2.jpg",
+          "v": "546a4ed99c",
           "w": 1179,
           "h": 1463
         },
         {
           "type": "image",
           "src": "works/Sunny/Yangyang3.jpg",
+          "v": "866a00cf64",
           "w": 1168,
           "h": 1468
         },
         {
           "type": "image",
           "src": "works/Sunny/Yangyang4.jpg",
+          "v": "a8739383cf",
           "w": 1161,
           "h": 1467
         }
@@ -250,168 +275,196 @@ window.SITE_DATA = {
         {
           "type": "image",
           "src": "works/Paintings/fxn 2025-04-14 203454.273.jpg",
+          "v": "124130b097",
           "w": 2400,
           "h": 1800
         },
         {
           "type": "image",
           "src": "works/Paintings/DeathOfRobot.jpg",
+          "v": "edeffb12d7",
           "w": 2400,
           "h": 1040
         },
         {
           "type": "image",
           "src": "works/Paintings/IMG_3227.jpg",
+          "v": "de7c908aaf",
           "w": 2052,
           "h": 2400
         },
         {
           "type": "image",
           "src": "works/Paintings/IMG_3226.jpg",
+          "v": "d18871e82b",
           "w": 1800,
           "h": 2400
         },
         {
           "type": "image",
           "src": "works/Paintings/IMG_1985.jpg",
+          "v": "a0a4477f08",
           "w": 2400,
           "h": 1800
         },
         {
           "type": "image",
           "src": "works/Paintings/Embrace.jpg",
+          "v": "e414070e38",
           "w": 1393,
           "h": 2400
         },
         {
           "type": "image",
           "src": "works/Paintings/WechatIMG165.jpg",
+          "v": "2a9c752d21",
           "w": 1179,
           "h": 1469
         },
         {
           "type": "image",
           "src": "works/Paintings/WechatIMG167.jpg",
+          "v": "d9753c79c7",
           "w": 1179,
           "h": 1512
         },
         {
           "type": "image",
           "src": "works/Paintings/Screenshot 2026-11-20 at 17.26.36-1.jpg",
+          "v": "376b7669ca",
           "w": 1060,
           "h": 705
         },
         {
           "type": "image",
           "src": "works/Paintings/fxn 2025-04-14 203247.295.jpg",
+          "v": "3877ebb6c7",
           "w": 2400,
           "h": 1800
         },
         {
           "type": "image",
           "src": "works/Paintings/AnimalProject.jpg",
+          "v": "043e0bd181",
           "w": 2400,
           "h": 1495
         },
         {
           "type": "image",
           "src": "works/Paintings/Church.jpg",
+          "v": "76c93d513d",
           "w": 1800,
           "h": 2400
         },
         {
           "type": "image",
           "src": "works/Paintings/IMG_6144.jpg",
+          "v": "83131bc6c3",
           "w": 2400,
           "h": 1800
         },
         {
           "type": "image",
           "src": "works/Paintings/Screenshot 2026-11-20 at 17.28.04-1.jpg",
+          "v": "b9cce00254",
           "w": 2100,
           "h": 1424
         },
         {
           "type": "image",
           "src": "works/Paintings/Screenshot 2026-11-20 at 17.28.16-1.jpg",
+          "v": "4794792530",
           "w": 2098,
           "h": 1434
         },
         {
           "type": "image",
           "src": "works/Paintings/Screenshot 2026-11-20 at 17.28.31-1.jpg",
+          "v": "e9fa0fc11c",
           "w": 2016,
           "h": 1428
         },
         {
           "type": "image",
           "src": "works/Paintings/Screenshot 2026-11-20 at 17.27.18-2.jpg",
+          "v": "aa3d076fde",
           "w": 598,
           "h": 449
         },
         {
           "type": "image",
           "src": "works/Paintings/20Portraits.JPG",
+          "v": "0249da5c68",
           "w": 2400,
           "h": 1800
         },
         {
           "type": "image",
           "src": "works/Paintings/fxn 2025-04-14 203538.610.jpg",
+          "v": "99c8dd88f4",
           "w": 2400,
           "h": 1605
         },
         {
           "type": "image",
           "src": "works/Paintings/e476971b29c70f47e8cf4a8142a1c938.JPG",
+          "v": "724a1abfe7",
           "w": 1444,
           "h": 2151
         },
         {
           "type": "image",
           "src": "works/Paintings/IMG_3225.jpg",
+          "v": "bfd98ffec6",
           "w": 1800,
           "h": 2400
         },
         {
           "type": "image",
           "src": "works/Paintings/Screenshot 2026-11-20 at 17.27.36-1.jpg",
+          "v": "00093624b8",
           "w": 832,
           "h": 1116
         },
         {
           "type": "image",
           "src": "works/Paintings/Screenshot 2026-11-20 at 17.27.36-2.jpg",
+          "v": "e2b1430797",
           "w": 829,
           "h": 1116
         },
         {
           "type": "image",
           "src": "works/Paintings/Screenshot 2026-11-20 at 17.27.36-3.jpg",
+          "v": "e80667af5b",
           "w": 846,
           "h": 1116
         },
         {
           "type": "image",
           "src": "works/Paintings/Screenshot 2026-11-20 at 17.27.47-1.jpg",
+          "v": "a565490aa5",
           "w": 1283,
           "h": 958
         },
         {
           "type": "image",
           "src": "works/Paintings/Screenshot 2026-11-20 at 17.27.47-2.jpg",
+          "v": "9699b1207e",
           "w": 1288,
           "h": 958
         },
         {
           "type": "image",
           "src": "works/Paintings/Screenshot 2026-11-20 at 17.27.18-1.jpg",
+          "v": "029e8d3836",
           "w": 1236,
           "h": 908
         },
         {
           "type": "video",
           "src": "works/Paintings/Screen Recording 2026-01-15 at 01.44.10.mp4",
+          "v": "45e4e6ffaf",
           "w": 860,
           "h": 620,
           "d": 23
@@ -419,12 +472,14 @@ window.SITE_DATA = {
         {
           "type": "image",
           "src": "works/Paintings/IMG_8926.jpg",
+          "v": "0abeb4d936",
           "w": 2400,
           "h": 1012
         },
         {
           "type": "image",
           "src": "works/Paintings/Screenshot 2026-11-20 at 17.27.18-3.jpg",
+          "v": "b7cfa0349e",
           "w": 600,
           "h": 454
         }

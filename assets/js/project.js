@@ -2,7 +2,7 @@
   const data = window.SITE_DATA;
   if (!data) return;
   const { site, projects } = data;
-  const src = (p) => "content/" + p.split("/").map(encodeURIComponent).join("/");
+  const src = (p, v) => "content/" + p.split("/").map(encodeURIComponent).join("/") + (v ? "?v=" + v : "");
   const pad = (n) => String(n).padStart(2, "0");
   const $ = (id) => document.getElementById(id);
 
@@ -75,18 +75,18 @@
     if (m.type === "video" && isGrid) {
       // in a grid, videos behave like moving pictures: silent, looping, no controls
       el = document.createElement("video");
-      Object.assign(el, { src: src(m.src), muted: true, loop: true, autoplay: true,
+      Object.assign(el, { src: src(m.src, m.v), muted: true, loop: true, autoplay: true,
                           playsInline: true, preload: "metadata" });
       el.setAttribute("muted", "");
     } else if (m.type === "video" && p.layout === "film") {
       el = filmPlayer(m);
     } else if (m.type === "video") {
       el = document.createElement("video");
-      Object.assign(el, { src: src(m.src), controls: true, playsInline: true, preload: "metadata" });
+      Object.assign(el, { src: src(m.src, m.v), controls: true, playsInline: true, preload: "metadata" });
     } else {
       el = document.createElement("img");
       Object.assign(el, {
-        src: src(m.src),
+        src: src(m.src, m.v),
         alt: `${p.title} — ${k + 1}`,
         loading: k < 2 ? "eager" : "lazy",
         decoding: "async",
@@ -106,7 +106,7 @@
     if (m.w && m.h) fig.style.setProperty("--ar", m.w / m.h);
 
     const v = document.createElement("video");
-    Object.assign(v, { src: src(m.src), playsInline: true, preload: m.poster ? "none" : "metadata" });
+    Object.assign(v, { src: src(m.src, m.v), playsInline: true, preload: m.poster ? "none" : "metadata" });
     if (m.poster) v.poster = src(m.poster);
 
     const btn = document.createElement("button");
@@ -224,7 +224,7 @@
       cur = (k + items.length) % items.length;
       const m = items[cur];
       const el = document.createElement(m.type === "video" ? "video" : "img");
-      el.src = src(m.src);
+      el.src = src(m.src, m.v);
       if (m.type === "video") Object.assign(el, { muted: true, loop: true, autoplay: true, controls: true, playsInline: true });
       else el.alt = `${p.title} — ${cur + 1}`;
       stage.replaceChildren(el);

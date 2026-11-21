@@ -6,7 +6,7 @@
     return;
   }
   const { site, projects } = data;
-  const src = (p) => "content/" + p.split("/").map(encodeURIComponent).join("/");
+  const src = (p, v) => "content/" + p.split("/").map(encodeURIComponent).join("/") + (v ? "?v=" + v : "");
   const pad = (n) => String(n).padStart(2, "0");
   const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 
