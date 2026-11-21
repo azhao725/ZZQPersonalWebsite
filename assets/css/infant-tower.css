@@ -34,6 +34,20 @@
   margin-top: calc(var(--su) * 42);
 }
 
+/* section headings: same bold Caslon caps as the title */
+.it-sec {
+  position: absolute; left: 0; right: 0;
+  top: calc(var(--y) / 23120 * 100%);
+  height: calc(var(--h) / 23120 * 100%);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  font-family: "Libre Caslon Text", Georgia, "Times New Roman", serif;
+  font-weight: 700; text-transform: uppercase; text-align: center; line-height: 1;
+  pointer-events: none;
+  text-shadow: 0 2px calc(var(--su) * 24) rgba(0,0,0,.45);
+}
+.it-sec__num  { font-size: max(16px, calc(var(--su) * 78)); letter-spacing: .12em; padding-left: .12em; }
+.it-sec__name { font-size: max(20px, calc(var(--su) * 112)); letter-spacing: -.01em; margin-top: calc(var(--su) * 34); }
+
 .it-top {
   position: absolute; top: 0; left: 0; right: 0; z-index: 5;
   display: flex; justify-content: space-between;
